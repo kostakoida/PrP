@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using MatrixWoutSIMD;
 
 namespace PP
@@ -11,8 +12,15 @@ namespace PP
             var rand = new Random();
             var st = new Stopwatch();
 
+
             for (var i = 32; i <= 2048; i *= 2)
             {
+                var element = new Element
+                {
+                    Value = float.MinValue,
+                    Column = -1,
+                    Row = -1
+                };
                 Console.WriteLine(i);
                 #region init Matrix and vector 
                 var matrix = new Matrix(i);
@@ -23,9 +31,9 @@ namespace PP
                 #endregion
                 #region proccessing
                 st.Restart();
-                var maxValue = matrix.GetMaxValue();
+                matrix?.GetMaxValue(element);
                 st.Stop();
-                Console.WriteLine("{0}, Time:{1}, Ticks:{2}", maxValue, st.ElapsedMilliseconds, st.ElapsedTicks);
+                Console.WriteLine("{0}, Time:{1}, Ticks:{2}", element, st.ElapsedMilliseconds, st.ElapsedTicks);
                 st.Restart();
                 var multWithVector = matrix.MultWithVector(vector);
                 st.Stop();

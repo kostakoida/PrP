@@ -71,14 +71,8 @@ namespace MatrixWoutSIMD
 
         #region methods
         //поиск максимального элемента
-        public Element GetMaxValue()
+        public Element GetMaxValue(Element element)
         {
-            var element = new Element
-            {
-                Value = float.MinValue,
-                Column = -1,
-                Row = -1
-            };
             for (var i = 0; i < _size; i++)
             {
                 for (var j = 0; j < _size; j++)
