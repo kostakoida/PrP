@@ -1,0 +1,8 @@
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\bin\Debug\PP.exe.config
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\bin\Debug\PP.exe
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\bin\Debug\PP.pdb
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\bin\Debug\MatrixWoutSIMD.dll
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\bin\Debug\MatrixWoutSIMD.pdb
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\obj\Debug\PP.csprojResolveAssemblyReference.cache
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\obj\Debug\PP.exe
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\obj\Debug\PP.pdb

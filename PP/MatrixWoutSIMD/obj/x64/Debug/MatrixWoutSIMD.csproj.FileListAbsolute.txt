@@ -1,0 +1,5 @@
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.dll.config
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.dll
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.pdb
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.dll
+C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.pdb
