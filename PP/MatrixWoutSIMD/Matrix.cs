@@ -5,7 +5,7 @@ namespace MatrixWoutSIMD
     public class Matrix
     {
         #region properties
-        private const int MaxNum = 10;
+        private const int MaxNum = 1000000;
         public float[,] matrix;
         private readonly int _size;
         private static string _ls = Environment.NewLine;
@@ -22,7 +22,7 @@ namespace MatrixWoutSIMD
             matrix = new float[size, size];
             _size = size;
         }
-
+			
         public Matrix(float[,] matrix)
         {
             this.matrix = matrix;
@@ -34,7 +34,9 @@ namespace MatrixWoutSIMD
         {
             for (var i = 0; i < _size; i++)
                 for (var j = 0; j < _size; j++)
-                    matrix[i, j] = rand.Next(MaxNum);
+                {
+                    matrix[i, j] = rand.Next(0, MaxNum);
+                }
         }
 
 
@@ -139,13 +141,13 @@ namespace MatrixWoutSIMD
             var p4 = a[3].MultipleMatrixVer2(Delete(b[2], b[0]));
             var p5 = (Add(a[0], a[1])).MultipleMatrixVer2(b[3]);
             var p6 = (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]));
-            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], 
+            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2],
                 b[3]));
 
-            var c11 = Add(Delete(Add(p1, p4),p5), p7);
-            var c12 = Add(p3,p5);
+            var c11 = Add(Delete(Add(p1, p4), p5), p7);
+            var c12 = Add(p3, p5);
             var c21 = Add(p2, p4);
-            var c22 = Add(Add(Delete(p1 ,p2), p3), p6);
+            var c22 = Add(Add(Delete(p1, p2), p3), p6);
 
             return Combine(c11, c12, c21, c22);
         }
@@ -215,14 +217,47 @@ namespace MatrixWoutSIMD
 
         public static bool IsEqual(Matrix matrix1, Matrix matrix2, int size)
         {
+            float min = 0;
+            float max = 0;
             for (var i = 0; i < size; i++)
+            {
                 for (var j = 0; j < size; j++)
-                    if (!(matrix1.matrix[i, j].Equals(matrix2.matrix[i, j])))
+                {
+                    min = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix1.matrix[i, j] : matrix2.matrix[i, j];
+                    max = matrix1.matrix[i, j] <= matrix2.matrix[i, j] ? matrix2.matrix[i, j] : matrix1.matrix[i, j] ;
+                    if (max - min > getError(matrix1.matrix[i, j], matrix2.matrix[i, j]) * 10)
+                    {
                         return false;
+                    }
+                }
+            }
+
             return true;
         }
 
-        #endregion      
+
+
+        private static int getError(float a, float b)
+        {
+            if (a < b)
+            {
+                return getError(b, a);
+            }
+            var temp = (int)Math.Floor(a);
+            var isEnd = 0;
+            var res = 1;
+            b = 7;
+            while (temp > 0 && isEnd < 2)
+            {
+                temp /= 10;
+                res += b > 0 ? 0 : 1;
+                b--;
+                if (temp < 10) isEnd++;
+            } 
+            return res;
+        }
+
+        #endregion
 
     }
 }
