@@ -22,7 +22,7 @@ namespace MatrixWoutSIMD
             matrix = new float[size, size];
             _size = size;
         }
-			
+
         public Matrix(float[,] matrix)
         {
             this.matrix = matrix;
@@ -219,13 +219,15 @@ namespace MatrixWoutSIMD
         {
             float min = 0;
             float max = 0;
+            double diff;
             for (var i = 0; i < size; i++)
             {
                 for (var j = 0; j < size; j++)
                 {
-                    min = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix1.matrix[i, j] : matrix2.matrix[i, j];
-                    max = matrix1.matrix[i, j] <= matrix2.matrix[i, j] ? matrix2.matrix[i, j] : matrix1.matrix[i, j] ;
-                    if (max - min > getError(matrix1.matrix[i, j], matrix2.matrix[i, j]) * 10)
+                    max = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix1.matrix[i, j] : matrix2.matrix[i, j];
+                    min = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix2.matrix[i, j] : matrix1.matrix[i, j];
+                    diff = Math.Pow(10, getError(matrix1.matrix[i, j], matrix2.matrix[i, j]));
+                    if (max - min > diff)
                     {
                         return false;
                     }
@@ -243,17 +245,17 @@ namespace MatrixWoutSIMD
             {
                 return getError(b, a);
             }
-            var temp = (int)Math.Floor(a);
             var isEnd = 0;
             var res = 1;
             b = 7;
-            while (temp > 0 && isEnd < 2)
+            while (a > 0 && isEnd < 2)
             {
-                temp /= 10;
+                a /= 10;
                 res += b > 0 ? 0 : 1;
                 b--;
-                if (temp < 10) isEnd++;
-            } 
+                if (a < 10) isEnd++;
+            }
+            res += res >= 7 ? 1 : 0;
             return res;
         }
 
