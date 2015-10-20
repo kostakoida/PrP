@@ -247,7 +247,7 @@ namespace MatrixWoutSIMD
             }
             var isEnd = 0;
             var res = 1;
-            b = 7;
+            b = 6;
             while (a > 0 && isEnd < 2)
             {
                 a /= 10;
