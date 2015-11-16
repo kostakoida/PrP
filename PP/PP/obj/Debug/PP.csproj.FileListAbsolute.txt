@@ -26,3 +26,15 @@ Z:\Documents\Personal\PrP\PP\PP\bin\Debug\System.Numerics.Vectors.xml
 Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.csprojResolveAssemblyReference.cache
 Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.exe
 Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\PP.exe.config
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Debug\PP.exe
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Debug\PP.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\PP.exe
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\PP.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSimd.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWoutSIMD.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSimd.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWoutSIMD.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Debug\PP.csprojResolveAssemblyReference.cache

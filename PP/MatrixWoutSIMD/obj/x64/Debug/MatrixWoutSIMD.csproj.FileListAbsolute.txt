@@ -13,3 +13,8 @@ Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.dll
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.pdb
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.dll
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.dll.config
+C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.pdb

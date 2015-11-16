@@ -25,6 +25,7 @@ namespace PP
                 Console.WriteLine(i);
                 #region init Matrix and vector 
                 var matrix = new MatrixWoutSIMD.Matrix(i);
+                matrix.FillMatrix(rand);
                 var matrix2 = new MatrixWoutSIMD.Matrix(i);
                 var simdMatrix = new MatrixWithSIMD.Matrix(matrix.matrix);
                 var vector = matrix.FillVector(rand);
