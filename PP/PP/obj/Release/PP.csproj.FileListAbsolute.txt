@@ -14,3 +14,11 @@ C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\PP.pdb
 C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.dll
 C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.pdb
 C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Release\PP.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe.config
+\\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe
+\\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\PP.pdb
+\\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.dll
+\\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.pdb
+\\psf\Home\Documents\Personal\PrP\PP\PP\obj\Release\PP.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\Personal\PrP\PP\PP\obj\Release\PP.exe
+\\psf\Home\Documents\Personal\PrP\PP\PP\obj\Release\PP.pdb

@@ -10,3 +10,9 @@ C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Release\Matr
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.dll
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.pdb
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.dll.config
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.dll
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.pdb
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.dll
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.pdb
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache

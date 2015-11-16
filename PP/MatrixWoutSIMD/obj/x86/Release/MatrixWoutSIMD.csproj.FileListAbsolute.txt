@@ -8,3 +8,8 @@ C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Release\Matr
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Release\MatrixWoutSIMD.pdb
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x86\Release\MatrixWoutSIMD.dll
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x86\Release\MatrixWoutSIMD.pdb
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Release\MatrixWoutSIMD.dll.config
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Release\MatrixWoutSIMD.dll
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Release\MatrixWoutSIMD.pdb
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x86\Release\MatrixWoutSIMD.dll
+\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x86\Release\MatrixWoutSIMD.pdb

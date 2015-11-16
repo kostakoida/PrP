@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP", "PP\PP.csproj", "{AB58
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixWoutSIMD", "MatrixWoutSIMD\MatrixWoutSIMD.csproj", "{3759BA35-AB0D-4955-A6F4-84F23BA0C416}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixWithSimd", "MatrixWithSimd\MatrixWithSimd.csproj", "{60867A1C-C958-4CAF-B5D8-2D81A46EF810}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,18 @@ Global
 		{3759BA35-AB0D-4955-A6F4-84F23BA0C416}.Release|x64.ActiveCfg = Release|x64
 		{3759BA35-AB0D-4955-A6F4-84F23BA0C416}.Release|x64.Build.0 = Release|x64
 		{3759BA35-AB0D-4955-A6F4-84F23BA0C416}.Release|x86.ActiveCfg = Release|x86
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Debug|x64.Build.0 = Debug|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Debug|x86.Build.0 = Debug|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Release|x64.ActiveCfg = Release|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Release|x64.Build.0 = Release|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Release|x86.ActiveCfg = Release|Any CPU
+		{60867A1C-C958-4CAF-B5D8-2D81A46EF810}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

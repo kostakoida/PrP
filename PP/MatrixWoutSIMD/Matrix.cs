@@ -5,7 +5,7 @@ namespace MatrixWoutSIMD
     public class Matrix
     {
         #region properties
-        private const int MaxNum = 1000000;
+        private const int MaxNum = 10000000;
         public float[,] matrix;
         private readonly int _size;
         private static string _ls = Environment.NewLine;
@@ -226,7 +226,10 @@ namespace MatrixWoutSIMD
                 {
                     max = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix1.matrix[i, j] : matrix2.matrix[i, j];
                     min = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix2.matrix[i, j] : matrix1.matrix[i, j];
+                    if (max - min != 0)
+                        Console.Write("");
                     diff = Math.Pow(10, getError(matrix1.matrix[i, j], matrix2.matrix[i, j]));
+                    
                     if (max - min > diff)
                     {
                         return false;
@@ -259,6 +262,23 @@ namespace MatrixWoutSIMD
             return res;
         }
 
+
+        public bool Equal(Matrix other)
+        {
+            if (other == null)
+                return false;
+
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    if (this.matrix[i, j] != other.matrix[i, j])
+                        if (Math.Abs(this.matrix[i, j] - other.matrix[i, j]) > Math.Abs(this.matrix[i, j]))
+                            return false;
+                }
+            }
+            return true;
+        }
         #endregion
 
     }
