@@ -6,14 +6,6 @@ C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\bin\Release\Matri
 C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\obj\Release\PP.csprojResolveAssemblyReference.cache
 C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\obj\Release\PP.exe
 C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\obj\Release\PP.pdb
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe.config
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Release\PP.exe
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Release\PP.pdb
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\PP.pdb
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.dll
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.pdb
-C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Release\PP.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe.config
 \\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe
 \\psf\Home\Documents\Personal\PrP\PP\PP\bin\Release\PP.pdb
@@ -34,3 +26,15 @@ Z:\Documents\Personal\PrP\PP\PP\bin\Release\System.Numerics.Vectors.xml
 Z:\Documents\Personal\PrP\PP\PP\obj\Release\PP.csprojResolveAssemblyReference.cache
 Z:\Documents\Personal\PrP\PP\PP\obj\Release\PP.exe
 Z:\Documents\Personal\PrP\PP\PP\obj\Release\PP.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe.config
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\PP.exe
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\PP.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWithSimd.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\System.Numerics.Vectors.dll
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWithSimd.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\MatrixWoutSIMD.pdb
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\bin\Release\System.Numerics.Vectors.xml
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Release\PP.csprojResolveAssemblyReference.cache
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Release\PP.exe
+C:\Users\koste_000\Documents\Personal\PrP\PP\PP\obj\Release\PP.pdb

@@ -35,16 +35,16 @@ namespace MatrixWithSIMD
 
         public Matrix(float[,] matrix)
         {
-            this.matrix = new Vector4[matrix.GetLength(0), matrix.GetLength(0)/4];
+            this.matrix = new Vector4[matrix.GetLength(0), matrix.GetLength(0) / 4];
             this._size = matrix.GetLength(0);
             for (var i = 0; i < matrix.GetLength(0); i++)
             {
                 for (var j = 0; j < matrix.GetLength(0); j += 4)
                 {
-                    this.matrix[i, j].X = matrix[i, j];
-                    this.matrix[i, j].Y = matrix[i, j + 1];
-                    this.matrix[i, j].W = matrix[i, j + 2];
-                    this.matrix[i, j].Z = matrix[i, j + 3];
+                    this.matrix[i, j / 4].X = matrix[i, j];
+                    this.matrix[i, j / 4].Y = matrix[i, j + 1];
+                    this.matrix[i, j / 4].W = matrix[i, j + 2];
+                    this.matrix[i, j / 4].Z = matrix[i, j + 3];
                 }
             }
         }
@@ -163,13 +163,13 @@ namespace MatrixWithSIMD
         //Умножение матрицы на вектор
         public Vector4[] MultWithVector(Vector4[] vector)
         {
-            if (vector.Length != _size)
+            if (vector.Length != _size / 4)
                 return null;
             var res = new Vector4[_size];
             for (var i = 0; i < _size; i++)
             {
                 var sum = Vector4.Zero;
-                for (var j = 0; j < _size; j++)
+                for (var j = 0; j < _size / 4; j++)
                 {
                     sum += matrix[i, j] * vector[j];
                 }
