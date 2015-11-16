@@ -14,3 +14,15 @@ C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\obj\Debug\PP.pdb
 \\psf\Home\Documents\Personal\PrP\PP\PP\obj\Debug\PP.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\Personal\PrP\PP\PP\obj\Debug\PP.exe
 \\psf\Home\Documents\Personal\PrP\PP\PP\obj\Debug\PP.pdb
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\PP.exe.config
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\PP.exe
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\PP.pdb
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSimd.dll
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWoutSIMD.dll
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\System.Numerics.Vectors.dll
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSimd.pdb
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWoutSIMD.pdb
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\System.Numerics.Vectors.xml
+Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.csprojResolveAssemblyReference.cache
+Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.exe
+Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.pdb

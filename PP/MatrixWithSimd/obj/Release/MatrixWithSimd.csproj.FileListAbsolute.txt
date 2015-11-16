@@ -1,1 +1,7 @@
+Z:\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Release\MatrixWithSimd.dll
+Z:\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Release\MatrixWithSimd.pdb
+Z:\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Release\System.Numerics.Vectors.dll
+Z:\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Release\System.Numerics.Vectors.xml
 Z:\Documents\Personal\PrP\PP\MatrixWithSimd\obj\Release\MatrixWithSimd.csprojResolveAssemblyReference.cache
+Z:\Documents\Personal\PrP\PP\MatrixWithSimd\obj\Release\MatrixWithSimd.dll
+Z:\Documents\Personal\PrP\PP\MatrixWithSimd\obj\Release\MatrixWithSimd.pdb

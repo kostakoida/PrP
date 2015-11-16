@@ -8,3 +8,8 @@ C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\obj\x
 \\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.pdb
 \\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.dll
 \\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.pdb
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.dll.config
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.dll
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Debug\MatrixWoutSIMD.pdb
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.dll
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Debug\MatrixWoutSIMD.pdb

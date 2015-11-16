@@ -29,9 +29,6 @@ namespace PP
                 var simdMatrix = new MatrixWithSIMD.Matrix(matrix.matrix);
                 var vector = matrix.FillVector(rand);
                 var SimdVector = simdMatrix.FillVector(vector);
-                matrix.FillMatrix(rand);
-                matrix2.FillMatrix(rand);
-                Console.WriteLine("Is Matrix which were multiply by 2 different algoitms equal: {0}", matrix.Equal(matrix2));
 
                 #endregion
                 #region proccessing
@@ -43,6 +40,12 @@ namespace PP
                 var multWithVector = matrix.MultWithVector(vector);
                 st.Stop();
                 Console.WriteLine("Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                st.Restart();
+                var multWithSimdVector = simdMatrix.MultWithVector(SimdVector);
+                st.Stop();
+                Console.WriteLine("Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                Console.WriteLine($"Is vectors equal: {MatrixHelper.IsSimdVectorEqualNotSimd(multWithVector, multWithSimdVector)}");
+                Console.ReadLine();
                 //st.Restart();
                 //var res1 = matrix.MultipleMatrixVer1(matrix2);
                 //st.Stop();

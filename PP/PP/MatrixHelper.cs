@@ -6,7 +6,7 @@ namespace PP
 {
     public class MatrixHelper
     {
-        public bool IsSimdVectorEqualNotSimd(float[] woutSimd, Vector4[] withSimd)
+        public static bool IsSimdVectorEqualNotSimd(float[] woutSimd, Vector4[] withSimd)
         {
             for (var i = 0; i < withSimd.Length; i++)
             {

@@ -109,13 +109,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MatrixHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MatrixWithSimd\MatrixWithSimd.csproj">
+      <Project>{60867a1c-c958-4caf-b5d8-2d81a46ef810}</Project>
+      <Name>MatrixWithSimd</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MatrixWoutSIMD\MatrixWoutSIMD.csproj">
       <Project>{3759BA35-AB0D-4955-A6F4-84F23BA0C416}</Project>
       <Name>MatrixWoutSIMD</Name>
