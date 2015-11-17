@@ -8,7 +8,7 @@ namespace MatrixWoutSIMD
         private const int MaxNum = 10000000;
         public float[,] matrix;
         private readonly int _size;
-        private static string _ls = Environment.NewLine;
+        private static readonly string Ls = Environment.NewLine;
         #endregion
 
         #region init
@@ -71,7 +71,7 @@ namespace MatrixWoutSIMD
             {
                 for (var j = 0; j < _size; j++)
                     Console.Write("{0},", matrix[i, j]);
-                Console.Write(_ls);
+                Console.Write(Ls);
             }
         }
     
@@ -82,7 +82,7 @@ namespace MatrixWoutSIMD
             {
                 Console.Write("{0},", i);
             }
-            Console.Write(_ls);
+            Console.Write(Ls);
         }
 
         #endregion

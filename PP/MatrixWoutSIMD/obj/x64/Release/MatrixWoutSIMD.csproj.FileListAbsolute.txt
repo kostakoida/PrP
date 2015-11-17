@@ -21,3 +21,13 @@ Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.dll
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.pdb
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.dll
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.pdb
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.dll.config
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWoutSIMD.pdb
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWithSimd.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\x64\Release\System.Numerics.Vectors.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\x64\Release\MatrixWithSimd.pdb
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\x64\Release\System.Numerics.Vectors.xml
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\x64\Release\MatrixWoutSIMD.pdb

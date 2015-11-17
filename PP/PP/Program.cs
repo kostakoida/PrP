@@ -57,18 +57,17 @@ namespace PP
                 st.Stop();
                 Console.WriteLine("SIMDMatrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 Console.WriteLine($"Is Simd Matrix and old MAtrix equal {MatrixHelper.IsEqual(res1.matrix, new MatrixWoutSIMD.Matrix(resSimd1).matrix, res1.matrix.GetLength(0))}");
-                //st.Restart();
-                //var res2 = matrix.MultipleMatrixVer2(matrix2);
-                //st.Stop();
-                //Console.WriteLine("Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
-                //st.Restart();
-                //var resSimd2 = simdMatrix.MultipleMatrixVer2(simdMatrix2);
-                //st.Stop();
-                //Console.WriteLine("Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
-                ////Console.WriteLine("Is Matrix which were multiply by 2 different algoitms equal: {0}", res1.Equal(res2));
-
-                //Console.WriteLine("Is Matrix which were multiply by 2 different algoitms equal: {0}", Matrix.IsEqual(res1, res2, i));
-                //Console.WriteLine("**************************End by {0} size ******************************************", i);
+                st.Restart();
+                var res2 = matrix.MultipleMatrixVer2(matrix2);
+                st.Stop();
+                Console.WriteLine("Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                st.Restart();
+                var resSimd2 = simdMatrix.MultipleMatrixVer2(simdMatrix2);
+                st.Stop();
+                Console.WriteLine("Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                Console.WriteLine("Is Matrix which were multiply by 2 different algoritms equal: {0}", MatrixHelper.IsEqual(res1.matrix, res2.matrix, i));
+                Console.WriteLine("Is SIMD Matrix equal not Simd Matrix: {0}", MatrixHelper.IsEqual(new MatrixWoutSIMD.Matrix(resSimd2).matrix, res2.matrix, i));
+                Console.WriteLine("**************************End by {0} size ******************************************", i);
 
                 #endregion
             }

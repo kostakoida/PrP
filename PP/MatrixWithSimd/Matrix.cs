@@ -9,7 +9,7 @@ namespace MatrixWithSIMD
     {
         #region properties
         public Vector4[,] matrix;
-        private readonly int _size;
+        private readonly int size;
 
         public float this[int row, int column]
         {
@@ -58,7 +58,7 @@ namespace MatrixWithSIMD
             get
             {
                 if (index == 0) return matrix[0, 0];
-                var tinySize = _size / 4;
+                var tinySize = size / 4;
                 var row = index % tinySize >= 0 ? index / tinySize : index / tinySize - 1;
                 var column = index % (tinySize);
                 return matrix[row, column];
@@ -66,7 +66,7 @@ namespace MatrixWithSIMD
             set
             {
                 if (index == 0) matrix[0, 0] = value;
-                var tinySize = _size / 4;
+                var tinySize = size / 4;
                 var row = index % tinySize >= 0 ? index / tinySize : index / tinySize - 1;
                 var column = index % (tinySize);
                 matrix[row, column] = value;
@@ -83,19 +83,19 @@ namespace MatrixWithSIMD
                 return;
             }
             matrix = new Vector4[size, size / 4];
-            _size = size;
+            this.size = size;
         }
 
         public Matrix(Vector4[,] matrix)
         {
             this.matrix = matrix;
-            _size = matrix.GetLength(0);
+            size = matrix.GetLength(0);
         }
 
         public Matrix(float[,] matrix)
         {
             this.matrix = new Vector4[matrix.GetLength(0), matrix.GetLength(0) / 4];
-            this._size = matrix.GetLength(0);
+            this.size = matrix.GetLength(0);
             for (var i = 0; i < matrix.GetLength(0); i++)
             {
                 for (var j = 0; j < matrix.GetLength(0); j += 4)
@@ -124,14 +124,14 @@ namespace MatrixWithSIMD
         #endregion
 
         #region methods
-        
+
         //поиск максимального элемента
         public Element GetMaxValue(Element element)
         {
             var elements = new List<Element>();
-            for (var i = 0; i < _size; i++)
+            for (var i = 0; i < size; i++)
             {
-                for (var j = 0; j < _size; j++)
+                for (var j = 0; j < size; j++)
                 {
                     if (matrix[i, j].X <= element.Value)
                     {
@@ -153,9 +153,9 @@ namespace MatrixWithSIMD
             }
 
             var o = 0;
-            for (var i = 0; i < _size; i++)
+            for (var i = 0; i < size; i++)
             {
-                for (var j = 0; j < _size / 4; j++)
+                for (var j = 0; j < size / 4; j++)
                 {
 
                 }
@@ -176,10 +176,10 @@ namespace MatrixWithSIMD
         //Умножение матрицы на вектор
         public float[] MultWithVector(Vector4[] vector)
         {
-            if (vector.Length != _size / 4)
+            if (vector.Length != size / 4)
                 return null;
-            var res = new float[_size];
-            for (var i = 0; i < _size; i++)
+            var res = new float[size];
+            for (var i = 0; i < size; i++)
             {
                 var sum = Vector4.Zero;
                 for (var j = 0; j < vector.Length; j++)
@@ -194,16 +194,16 @@ namespace MatrixWithSIMD
         //перемножение матриц. Вариант1
         public Matrix MultipleMatrixVer1(Matrix mulMatrix)
         {
-            var result = new Vector4[_size, _size / 4];
+            var result = new Vector4[size, size / 4];
             var transposed = mulMatrix.Transpose();
-            for (var i = 0; i < _size; i++)
+            for (var i = 0; i < size; i++)
             {
-                for (var j = 0; j < _size; j++)
+                for (var j = 0; j < size; j++)
                 {
                     var temp = Vector4.Zero;
-                    for (var k = 0; k < _size / 4; k++)
+                    for (var k = 0; k < size / 4; k++)
                     {
-                        temp += this[i * _size / 4 + k] * transposed[j * _size / 4 + k];
+                        temp += this[i * size / 4 + k] * transposed[j * size / 4 + k];
                     }
                     this[i, j] = temp.X + temp.Y + temp.Z + temp.W;
                 }
@@ -213,8 +213,8 @@ namespace MatrixWithSIMD
 
         public Matrix Transpose()
         {
-            var transposeMatrix = new Matrix(_size);
-            for (var i = 0; i < _size; i++)
+            var transposeMatrix = new Matrix(size);
+            for (var i = 0; i < size; i++)
             {
                 for (var j = 0; j < i; j++)
                 {
@@ -228,7 +228,7 @@ namespace MatrixWithSIMD
         //перемножение матриц. Вариант2. Алгоритм Штрассена
         public Matrix MultipleMatrixVer2(Matrix mulMatrix)
         {
-            if (_size <= 64)
+            if (size <= 64)
                 return MultipleMatrixVer1(mulMatrix);
             var a = CropMatrix();
             var b = mulMatrix.CropMatrix();
@@ -251,16 +251,19 @@ namespace MatrixWithSIMD
 
         private Matrix Combine(Matrix c11, Matrix c12, Matrix c21, Matrix c22)
         {
-            var res = new Matrix(_size);
-            var cropedSize = _size / 2;
+            var res = new Matrix(size);
+            var cropedSize = size / 2;
+            var ind = 0;
+            var tinySize = size / 4;
             for (var i = 0; i < cropedSize; i++)
             {
-                for (var j = 0; j < cropedSize; j++)
+                for (var j = 0; j < cropedSize / 4; j++)
                 {
-                    res.matrix[i, j] = c11.matrix[i, j];
-                    res.matrix[i, j + cropedSize] = c12.matrix[i, j];
-                    res.matrix[i + cropedSize, j] = c21.matrix[i, j];
-                    res.matrix[i + cropedSize, j + cropedSize] = c22.matrix[i, j];
+                    res[i * tinySize + j] = c11[ind];
+                    res[i * tinySize + j + cropedSize / 4] = c12[ind];
+                    res[i * tinySize + j + size * cropedSize / 4] = c21[ind];
+                    res[i * tinySize + j + (size + 1) * cropedSize / 4] = c22[ind];
+                    ind++;
                 }
             }
             return res;
@@ -268,21 +271,22 @@ namespace MatrixWithSIMD
 
         private Matrix[] CropMatrix()
         {
-            var croppedSize = _size / 2;
-            var tinySize = _size / 4;
+            var croppedSize = size / 2;
+            var tinySize = size / 4;
             var m1 = new Matrix(croppedSize);
             var m2 = new Matrix(croppedSize);
             var m3 = new Matrix(croppedSize);
             var m4 = new Matrix(croppedSize);
-            const int ind = 0;
+            var ind = 0;
             for (var i = 0; i < croppedSize; i++)
             {
                 for (var j = 0; j < croppedSize / 4; j++)
                 {
-                    m1[ind] = this[i * tinySize / 4 + j];
-                    m2[ind] = this[i * tinySize / 4 + j + croppedSize / 4];
-                    m3[ind] = this[i * tinySize / 4 + j + _size * croppedSize / 4];
-                    m4[ind] = this[i * tinySize + j + (_size + 1) * croppedSize / 4];
+                    m1[ind] = this[i * tinySize + j];
+                    m2[ind] = this[i * tinySize + j + croppedSize / 4];
+                    m3[ind] = this[i * tinySize + j + size * croppedSize / 4];
+                    m4[ind] = this[i * tinySize + j + (size + 1) * croppedSize / 4];
+                    ind++;
                 }
             }
             return new[] { m1, m2, m3, m4 };
@@ -290,10 +294,10 @@ namespace MatrixWithSIMD
 
         public static Matrix Add(Matrix m1, Matrix m2)
         {
-            var res = new Matrix(m1._size);
-            for (var i = 0; i < m1._size; i++)
+            var res = new Matrix(m1.size);
+            for (var i = 0; i < m1.size; i++)
             {
-                for (var j = 0; j < m1._size; j++)
+                for (var j = 0; j < m1.size / 4; j++)
                 {
                     res.matrix[i, j] = m1.matrix[i, j] + m2.matrix[i, j];
                 }
@@ -303,14 +307,14 @@ namespace MatrixWithSIMD
 
         public static Matrix Delete(Matrix m1, Matrix m2)
         {
-            var res = new Matrix(m1._size);
-            for (var i = 0; i < m1._size; i++)
+            var res = new Matrix(m1.size);
+            for (var i = 0; i < m1.size; i++)
             {
-                for (var j = 0; j < m1._size; j++)
+                for (var j = 0; j < m1.size / 4; j++)
                 {
                     res.matrix[i, j] = m1.matrix[i, j] - m2.matrix[i, j];
                 }
-            } 
+            }
             return res;
         }
 
