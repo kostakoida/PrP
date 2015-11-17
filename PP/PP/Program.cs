@@ -53,7 +53,7 @@ namespace PP
                 st.Stop();
                 Console.WriteLine("Matrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 st.Restart();
-                var resSimd1 = simdMatrix.MultipleMatrixVer1(simdMatrix2);
+                var resSimd1 = simdMatrix.MultipleMatrixVer1(simdMatrix2); 
                 st.Stop();
                 Console.WriteLine("SIMDMatrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 Console.WriteLine($"Is Simd Matrix and old MAtrix equal {MatrixHelper.IsEqual(res1.matrix, new MatrixWoutSIMD.Matrix(resSimd1).matrix, res1.matrix.GetLength(0))}");

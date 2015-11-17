@@ -29,6 +29,22 @@ namespace MatrixWoutSIMD
             _size = matrix.GetLength(0);
         }
 
+        public Matrix(MatrixWithSIMD.Matrix simdMatrix)
+        {
+            this._size = simdMatrix.matrix.GetLength(0);
+            this.matrix = new float[_size, _size];
+            for (var i = 0; i < _size; i++)
+            {
+                for (var j = 0; j < _size; j+=4)
+                {
+                    matrix[i, j] = simdMatrix.matrix[i, j / 4].X;
+                    matrix[i, j + 1] = simdMatrix.matrix[i, j / 4].Y;
+                    matrix[i, j + 2] = simdMatrix.matrix[i, j / 4].Z;
+                    matrix[i, j + 3] = simdMatrix.matrix[i, j / 4].W;
+                }  
+            }
+        }
+
         //заполнение матрицы
         public void FillMatrix(Random rand)
         {
@@ -58,7 +74,7 @@ namespace MatrixWoutSIMD
                 Console.Write(_ls);
             }
         }
-
+    
         //вывод вектора в консоль
         public static void OutputVector(float[] vector)
         {
@@ -214,72 +230,6 @@ namespace MatrixWoutSIMD
             }
             return res;
         }
-
-        public static bool IsEqual(Matrix matrix1, Matrix matrix2, int size)
-        {
-            float min = 0;
-            float max = 0;
-            double diff;
-            for (var i = 0; i < size; i++)
-            {
-                for (var j = 0; j < size; j++)
-                {
-                    max = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix1.matrix[i, j] : matrix2.matrix[i, j];
-                    min = matrix1.matrix[i, j] >= matrix2.matrix[i, j] ? matrix2.matrix[i, j] : matrix1.matrix[i, j];
-                    if (max - min != 0)
-                        Console.Write("");
-                    diff = Math.Pow(10, getError(matrix1.matrix[i, j], matrix2.matrix[i, j]));
-                    
-                    if (max - min > diff)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-
-
-
-        private static int getError(float a, float b)
-        {
-            if (a < b)
-            {
-                return getError(b, a);
-            }
-            var isEnd = 0;
-            var res = 1;
-            b = 6;
-            while (a > 0 && isEnd < 2)
-            {
-                a /= 10;
-                res += b > 0 ? 0 : 1;
-                b--;
-                if (a < 10) isEnd++;
-            }
-            res += res >= 7 ? 1 : 0;
-            return res;
-        }
-
-
-        public bool Equal(Matrix other)
-        {
-            if (other == null)
-                return false;
-
-            for (int i = 0; i < _size; i++)
-            {
-                for (int j = 0; j < _size; j++)
-                {
-                    if (this.matrix[i, j] != other.matrix[i, j])
-                        if (Math.Abs(this.matrix[i, j] - other.matrix[i, j]) > Math.Abs(this.matrix[i, j]))
-                            return false;
-                }
-            }
-            return true;
-        }
         #endregion
-
     }
 }
