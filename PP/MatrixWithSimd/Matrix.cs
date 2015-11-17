@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Numerics;
-using MatrixWithSimd;
+using MatrixWithSIMD;
 
-namespace MatrixWithSIMD
+namespace MatrixWithSimd
 {
     public class Matrix
     {
@@ -15,9 +14,8 @@ namespace MatrixWithSIMD
         {
             get
             {
-                var ind = column;
-                var i = ind / 4;
-                switch (ind % 4)
+                var i = column / 4;
+                switch (column % 4)
                 {
                     case 0:
                         return matrix[row, i].X;
@@ -27,15 +25,13 @@ namespace MatrixWithSIMD
                         return matrix[row, i].Z;
                     case 3:
                         return matrix[row, i].W;
-                    default:
-                        return -1;
                 }
+                return 0;
             }
             set
             {
-                var ind = column;
-                var i = ind / 4;
-                switch (ind % 4)
+                var i = column / 4;
+                switch (column % 4)
                 {
                     case 0:
                         matrix[row, i].X = value;
@@ -128,38 +124,29 @@ namespace MatrixWithSIMD
         //поиск максимального элемента
         public Element GetMaxValue(Element element)
         {
-            var elements = new List<Element>();
-            for (var i = 0; i < size; i++)
-            {
-                for (var j = 0; j < size; j++)
-                {
-                    if (matrix[i, j].X <= element.Value)
-                    {
-                        elements.Add(setElement(matrix[i, j].X, i, j));
-                    }
-                    if (matrix[i, j].Y <= element.Value)
-                    {
-                        elements.Add(setElement(matrix[i, j].Y, i, j));
-                    }
-                    if (matrix[i, j].W <= element.Value)
-                    {
-                        elements.Add(setElement(matrix[i, j].W, i, j));
-                    }
-                    if (matrix[i, j].Z <= element.Value)
-                    {
-                        elements.Add(setElement(matrix[i, j].Z, i, j));
-                    }
-                }
-            }
-
-            var o = 0;
             for (var i = 0; i < size; i++)
             {
                 for (var j = 0; j < size / 4; j++)
                 {
-
+                    if (matrix[i, j].X <= element.Value)
+                    {
+                        element = setElement(matrix[i, j].X, i, j);
+                    }
+                    if (matrix[i, j].Y <= element.Value)
+                    {
+                        element = setElement(matrix[i, j].Y, i, j);
+                    }
+                    if (matrix[i, j].W <= element.Value)
+                    {
+                        element = setElement(matrix[i, j].W, i, j);
+                    }
+                    if (matrix[i, j].Z <= element.Value)
+                    {
+                        element = setElement(matrix[i, j].Z, i, j);
+                    }
                 }
             }
+
             return element;
         }
 

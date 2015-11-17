@@ -29,7 +29,7 @@ namespace MatrixWoutSIMD
             _size = matrix.GetLength(0);
         }
 
-        public Matrix(MatrixWithSIMD.Matrix simdMatrix)
+        public Matrix(MatrixWithSimd.Matrix simdMatrix)
         {
             this._size = simdMatrix.matrix.GetLength(0);
             this.matrix = new float[_size, _size];

@@ -1,4 +1,4 @@
-﻿namespace MatrixWithSimd
+﻿namespace MatrixWithSIMD
 {
     public class Element
     {
