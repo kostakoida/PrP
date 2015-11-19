@@ -10,7 +10,7 @@ namespace MatrixWoutSIMD
         public float[,] matrix;
         private readonly int _size;
         private static readonly string Ls = Environment.NewLine;
-        private readonly static int VectorSize = Vector<float>.Count;
+        public readonly static int VectorSize = Vector<float>.Count;
 
         #endregion
 

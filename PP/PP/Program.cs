@@ -36,7 +36,9 @@ namespace PP
                 var simdMatrix2 = new MatrixWithSimd.Matrix(matrix2.matrix);
                 var vector = matrix.FillVector(rand);
                 var SimdVector = simdMatrix.FillVector(vector);
+                Console.WriteLine($"is matrix equals {MatrixHelper.IsEqual(matrix.matrix, matrix2.matrix, matrix.matrix.GetLength(0))}");
 
+                Console.WriteLine($"Length of vector is {Matrix.VectorSize}");
                 #endregion
                 #region proccessing
                 st.Restart();

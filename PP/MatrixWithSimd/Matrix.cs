@@ -87,7 +87,7 @@ namespace MatrixWithSimd
                 {
                     for (var z = 0; z < VectorSize; z++)
                     {
-                        this[i, j / VectorSize] = matrix[i, j];
+                        this[i, j + z] = matrix[i, j+z];
                     }
                 }
             }
@@ -101,9 +101,9 @@ namespace MatrixWithSimd
                 for (var j = 0; j < VectorSize; j++)
                 {
                     var arr = new float[VectorSize];
-                    v[i/VectorSize].CopyTo(arr);
+                    v[i / VectorSize].CopyTo(arr);
                     arr[j] = vector[i + j];
-                    v[i/VectorSize] = new Vector<float>(arr);
+                    v[i / VectorSize] = new Vector<float>(arr);
                 }
             }
             return v;
