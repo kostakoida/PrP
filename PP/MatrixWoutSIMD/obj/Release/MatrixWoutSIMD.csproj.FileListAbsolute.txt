@@ -3,14 +3,6 @@ c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\bin\R
 c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
 c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.pdb
 c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.xml
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
@@ -19,3 +11,10 @@ C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWi
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.xml
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll

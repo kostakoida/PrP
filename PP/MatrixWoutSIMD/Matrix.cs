@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace MatrixWoutSIMD
 {
@@ -9,6 +10,8 @@ namespace MatrixWoutSIMD
         public float[,] matrix;
         private readonly int _size;
         private static readonly string Ls = Environment.NewLine;
+        private readonly static int VectorSize = Vector<float>.Count;
+
         #endregion
 
         #region init
@@ -35,13 +38,14 @@ namespace MatrixWoutSIMD
             this.matrix = new float[_size, _size];
             for (var i = 0; i < _size; i++)
             {
-                for (var j = 0; j < _size; j+=4)
+                for (var j = 0; j < _size; j += VectorSize)
                 {
-                    matrix[i, j] = simdMatrix.matrix[i, j / 4].X;
-                    matrix[i, j + 1] = simdMatrix.matrix[i, j / 4].Y;
-                    matrix[i, j + 2] = simdMatrix.matrix[i, j / 4].Z;
-                    matrix[i, j + 3] = simdMatrix.matrix[i, j / 4].W;
-                }  
+                    for (var z = 0; z < VectorSize; z++)
+                    {
+                        matrix[i, j + z] = simdMatrix.matrix[i, j / VectorSize][z];
+                    }
+                    
+                }
             }
         }
 
@@ -74,7 +78,7 @@ namespace MatrixWoutSIMD
                 Console.Write(Ls);
             }
         }
-    
+
         //вывод вектора в консоль
         public static void OutputVector(float[] vector)
         {

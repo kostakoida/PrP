@@ -5,22 +5,19 @@ namespace PP
 {
     public class MatrixHelper
     {
-        public static bool IsSimdVectorEqualNotSimd(float[] woutSimd, Vector4[] withSimd)
+        private readonly static int VectorSize = Vector<float>.Count;
+
+        public static bool IsSimdVectorEqualNotSimd(float[] woutSimd, Vector<float>[] withSimd)
         {
             for (var i = 0; i < withSimd.Length; i++)
             {
-                var diffX = Math.Pow(10, GetError(woutSimd[i * 4], withSimd[i].X));
-                var diffY = Math.Pow(10, GetError(woutSimd[i * 4 + 1], withSimd[i].Y));
-                var diffW = Math.Pow(10, GetError(woutSimd[i * 4 + 2], withSimd[i].W));
-                var diffZ = Math.Pow(10, GetError(woutSimd[i * 4 + 3], withSimd[i].Z));
-
-
-                if (Math.Max(woutSimd[i * 4], withSimd[i].X) - Math.Min(woutSimd[i], withSimd[i].X) > diffX
-                    && Math.Max(woutSimd[i * 4 + 1], withSimd[i].Y) - Math.Min(woutSimd[i], withSimd[i].Y) > diffY
-                    && Math.Max(woutSimd[i * 4 + 2], withSimd[i].W) - Math.Min(woutSimd[i], withSimd[i].W) > diffW
-                    && Math.Max(woutSimd[i * 4 + 3], withSimd[i].Z) - Math.Min(woutSimd[i], withSimd[i].Z) > diffZ)
+                for (var j = 0; j < VectorSize; j++)
                 {
-                    return false;
+                    var diffX = Math.Pow(10, GetError(woutSimd[i * VectorSize], withSimd[i][j]));
+                    if (Math.Max(woutSimd[i * VectorSize], withSimd[i][j]) - Math.Min(woutSimd[i], withSimd[i][j]) > diffX)
+                    {
+                        return false;
+                    }
                 }
             }
             return true;
@@ -61,7 +58,7 @@ namespace PP
                 {
                     return false;
                 }
-            } 
+            }
 
             return true;
         }
