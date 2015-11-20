@@ -87,7 +87,7 @@ namespace MatrixWithSimd
                 {
                     for (var z = 0; z < VectorSize; z++)
                     {
-                        this[i, j + z] = matrix[i, j+z];
+                        this[i, j + z] = matrix[i, j + z];
                     }
                 }
             }
@@ -167,8 +167,8 @@ namespace MatrixWithSimd
         //перемножение матриц. Вариант1
         public Matrix MultipleMatrixVer1(Matrix mulMatrix)
         {
-            var result = new Vector<float>[size, size / VectorSize];
-            var transposed = mulMatrix.Transpose();
+            var result = new Matrix(size);
+            var transposed = Transpose(mulMatrix);
             for (var i = 0; i < size; i++)
             {
                 for (var j = 0; j < size; j++)
@@ -180,22 +180,22 @@ namespace MatrixWithSimd
                     }
                     for (var z = 0; z < VectorSize; z++)
                     {
-                        this[i, j] += temp[z];
+                        result[i, j] += temp[z];
                     }
                 }
             }
-            return new Matrix(result);
+            return result;
         }
 
-        public Matrix Transpose()
+        public Matrix Transpose(Matrix mulMatrix)
         {
             var transposeMatrix = new Matrix(size);
             for (var i = 0; i < size; i++)
             {
-                for (var j = 0; j < i; j++)
+                for (var j = 0; j <= i; j++)
                 {
-                    transposeMatrix[i, j] = this[j, i];
-                    transposeMatrix[j, i] = this[i, j];
+                    transposeMatrix[i, j] = mulMatrix[j, i];
+                    transposeMatrix[j, i] = mulMatrix[i, j];
                 }
             }
             return transposeMatrix;
