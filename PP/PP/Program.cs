@@ -13,7 +13,7 @@ namespace PP
             var st = new Stopwatch();
 
 
-            for (var i = 64; i <= 2048; i *= 2)
+            for (var i = 8; i <= 2048; i *= 2)
             {
                 var element = new MatrixWoutSIMD.Element
                 {

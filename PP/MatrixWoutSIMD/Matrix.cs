@@ -5,7 +5,7 @@ namespace MatrixWoutSIMD
     public class Matrix
     {
         #region properties
-        private const int MaxNum = 10000000;
+        private const int MaxNum = 10000;
         public float[,] matrix;
         private readonly int _size;
         private static readonly string Ls = Environment.NewLine;
