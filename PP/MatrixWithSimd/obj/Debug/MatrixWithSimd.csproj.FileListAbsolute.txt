@@ -17,3 +17,9 @@ C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Debug\System.Num
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.dll
 C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\bin\Debug\MatrixWithSimd.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\bin\Debug\MatrixWithSimd.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.csprojResolveAssemblyReference.cache
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.pdb

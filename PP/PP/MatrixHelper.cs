@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Linq;
 using System.Numerics;
 
 namespace PP
@@ -32,7 +33,7 @@ namespace PP
         {
             var diff = Math.Abs(a) > Math.Pow(10, 7) ? GetBigError(a, b) : GetSmallError(a, b);
             if (diff > Math.Abs(a) / 10)
-                Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!{diff}  {Math.Abs(a) / 10}");
+                Console.WriteLine($"!!!!!!!!!!!!!!!!!!!!!!!!!!!{diff}  {Math.Abs(a) / 10}");
             return diff;
         }
 
@@ -63,15 +64,7 @@ namespace PP
 
         public static bool IsVectorsEqual(float[] a, float[] b)
         {
-            for (var i = 0; i < a.Length; i++)
-            {
-                if (Math.Abs(a[i] - b[i]) > GetError(a[i], b[i]))
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return !a.Where((t, i) => Math.Abs(t - b[i]) > GetError(t, b[i])).Any();
         }
 
         public static bool IsEqual(float[,] matrix1, float[,] matrix2, int size)
