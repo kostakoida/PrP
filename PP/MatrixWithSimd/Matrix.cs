@@ -6,7 +6,7 @@ namespace MatrixWithSimd
 {
     public class Matrix
     {
-        #region properties
+        #region properties 
         public Vector4[,] matrix;
         private readonly int size;
 
@@ -70,7 +70,7 @@ namespace MatrixWithSimd
         }
         #endregion
 
-        #region init
+        #region init 
         public Matrix(int size)
         {
             if (size <= 0)
@@ -119,9 +119,9 @@ namespace MatrixWithSimd
 
         #endregion
 
-        #region methods
+        #region methods 
 
-        //поиск максимального элемента
+        //поиск максимального элемента 
         public Element GetMaxValue(Element element)
         {
             for (var i = 0; i < size; i++)
@@ -160,7 +160,7 @@ namespace MatrixWithSimd
             };
         }
 
-        //Умножение матрицы на вектор
+        //Умножение матрицы на вектор 
         public float[] MultWithVector(Vector4[] vector)
         {
             if (vector.Length != size / 4)
@@ -178,11 +178,11 @@ namespace MatrixWithSimd
             return res;
         }
 
-        //перемножение матриц. Вариант1
+        //перемножение матриц. Вариант1 
         public Matrix MultipleMatrixVer1(Matrix mulMatrix)
         {
-            var result = new Vector4[size, size / 4];
-            var transposed = mulMatrix.Transpose();
+            var result = new Matrix(size);
+            var transposed = Transpose(mulMatrix);
             for (var i = 0; i < size; i++)
             {
                 for (var j = 0; j < size; j++)
@@ -192,27 +192,28 @@ namespace MatrixWithSimd
                     {
                         temp += this[i * size / 4 + k] * transposed[j * size / 4 + k];
                     }
-                    this[i, j] = temp.X + temp.Y + temp.Z + temp.W;
+                    result[i, j] = temp.X + temp.Y + temp.Z + temp.W;
                 }
             }
-            return new Matrix(result);
+            return result;
         }
 
-        public Matrix Transpose()
+        public Matrix Transpose(Matrix mulMatrix)
         {
             var transposeMatrix = new Matrix(size);
             for (var i = 0; i < size; i++)
             {
-                for (var j = 0; j < i; j++)
+                for (var j = 0; j
+                <= i; j++)
                 {
-                    transposeMatrix[i, j] = this[j, i];
-                    transposeMatrix[j, i] = this[i, j];
+                    transposeMatrix[i, j] = mulMatrix[j, i];
+                    transposeMatrix[j, i] = mulMatrix[i, j];
                 }
             }
             return transposeMatrix;
         }
 
-        //перемножение матриц. Вариант2. Алгоритм Штрассена
+        //перемножение матриц. Вариант2. Алгоритм Штрассена 
         public Matrix MultipleMatrixVer2(Matrix mulMatrix)
         {
             if (size <= 64)

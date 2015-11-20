@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using MatrixWoutSIMD;
-using MatrixWithSIMD;
 
 namespace PP
 {
@@ -32,13 +30,14 @@ namespace PP
                 var matrix = new MatrixWoutSIMD.Matrix(i);
                 matrix.FillMatrix(rand);
                 var matrix2 = new MatrixWoutSIMD.Matrix(i);
+                matrix2.FillMatrix(rand);
                 var simdMatrix = new MatrixWithSimd.Matrix(matrix.matrix);
                 var simdMatrix2 = new MatrixWithSimd.Matrix(matrix2.matrix);
                 var vector = matrix.FillVector(rand);
                 var SimdVector = simdMatrix.FillVector(vector);
 
                 #endregion
-                #region proccessing
+                #region proccessing 
                 st.Restart();
                 matrix.GetMaxValue(element);
                 st.Stop();
@@ -46,7 +45,7 @@ namespace PP
                 st.Restart();
                 simdMatrix.GetMaxValue(element2);
                 st.Stop();
-                Console.WriteLine("Simd:    {0}, Time:{1}, Ticks:{2}", element, st.ElapsedMilliseconds, st.ElapsedTicks);
+                Console.WriteLine("Simd: {0}, Time:{1}, Ticks:{2}", element, st.ElapsedMilliseconds, st.ElapsedTicks);
                 st.Restart();
                 var multWithVector = matrix.MultWithVector(vector);
                 st.Stop();
@@ -54,16 +53,16 @@ namespace PP
                 st.Restart();
                 var multWithSimdVector = simdMatrix.MultWithVector(SimdVector);
                 st.Stop();
-                Console.WriteLine("Simd:    Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                Console.WriteLine("Simd: Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 Console.WriteLine($"Is vectors equal: {MatrixHelper.IsVectorsEqual(multWithVector, multWithSimdVector)}");
                 st.Restart();
                 var res1 = matrix.MultipleMatrixVer1(matrix2);
                 st.Stop();
                 Console.WriteLine("Matrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 st.Restart();
-                var resSimd1 = simdMatrix.MultipleMatrixVer1(simdMatrix2); 
+                var resSimd1 = simdMatrix.MultipleMatrixVer1(simdMatrix2);
                 st.Stop();
-                Console.WriteLine("Simd:    SIMDMatrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                Console.WriteLine("Simd: SIMDMatrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 Console.WriteLine($"Is Simd Matrix and old MAtrix equal {MatrixHelper.IsEqual(res1.matrix, new MatrixWoutSIMD.Matrix(resSimd1).matrix, res1.matrix.GetLength(0))}");
                 st.Restart();
                 var res2 = matrix.MultipleMatrixVer2(matrix2);
@@ -72,7 +71,7 @@ namespace PP
                 st.Restart();
                 var resSimd2 = simdMatrix.MultipleMatrixVer2(simdMatrix2);
                 st.Stop();
-                Console.WriteLine("Simd:    Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                Console.WriteLine("Simd: Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 Console.WriteLine("Is Matrix which were multiply by 2 different algoritms equal: {0}", MatrixHelper.IsEqual(res1.matrix, res2.matrix, i));
                 Console.WriteLine("Is SIMD Matrix equal not Simd Matrix: {0}", MatrixHelper.IsEqual(new MatrixWoutSIMD.Matrix(resSimd2).matrix, res2.matrix, i));
                 Console.WriteLine("**************************End by {0} size ******************************************", i);

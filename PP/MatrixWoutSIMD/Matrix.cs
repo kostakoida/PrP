@@ -4,14 +4,14 @@ namespace MatrixWoutSIMD
 {
     public class Matrix
     {
-        #region properties
-        private const int MaxNum = 10000000;
+        #region properties 
+        private const int MaxNum = 1000000000;
         public float[,] matrix;
         private readonly int _size;
         private static readonly string Ls = Environment.NewLine;
         #endregion
 
-        #region init
+        #region init 
         public Matrix(int size)
         {
             if (size <= 0)
@@ -35,17 +35,17 @@ namespace MatrixWoutSIMD
             this.matrix = new float[_size, _size];
             for (var i = 0; i < _size; i++)
             {
-                for (var j = 0; j < _size; j+=4)
+                for (var j = 0; j < _size; j += 4)
                 {
                     matrix[i, j] = simdMatrix.matrix[i, j / 4].X;
                     matrix[i, j + 1] = simdMatrix.matrix[i, j / 4].Y;
                     matrix[i, j + 2] = simdMatrix.matrix[i, j / 4].Z;
                     matrix[i, j + 3] = simdMatrix.matrix[i, j / 4].W;
-                }  
+                }
             }
         }
 
-        //заполнение матрицы
+        //заполнение матрицы 
         public void FillMatrix(Random rand)
         {
             for (var i = 0; i < _size; i++)
@@ -64,7 +64,7 @@ namespace MatrixWoutSIMD
             return vector;
         }
 
-        //метод вывода матрицы в консоль
+        //метод вывода матрицы в консоль 
         public void Output()
         {
             for (var i = 0; i < _size; i++)
@@ -74,8 +74,8 @@ namespace MatrixWoutSIMD
                 Console.Write(Ls);
             }
         }
-    
-        //вывод вектора в консоль
+
+        //вывод вектора в консоль 
         public static void OutputVector(float[] vector)
         {
             foreach (var i in vector)
@@ -87,8 +87,8 @@ namespace MatrixWoutSIMD
 
         #endregion
 
-        #region methods
-        //поиск максимального элемента
+        #region methods 
+        //поиск максимального элемента 
         public Element GetMaxValue(Element element)
         {
             for (var i = 0; i < _size; i++)
@@ -107,7 +107,7 @@ namespace MatrixWoutSIMD
             return element;
         }
 
-        //Умножение матрицы на вектор
+        //Умножение матрицы на вектор 
         public float[] MultWithVector(float[] vector)
         {
             if (vector.Length != _size)
@@ -125,7 +125,7 @@ namespace MatrixWoutSIMD
             return res;
         }
 
-        //перемножение матриц. Вариант1
+        //перемножение матриц. Вариант1 
         public Matrix MultipleMatrixVer1(Matrix mulMatrix)
         {
             var result = new float[_size, _size];
@@ -143,7 +143,7 @@ namespace MatrixWoutSIMD
             return new Matrix(result);
         }
 
-        //перемножение матриц. Вариант2. Алгоритм Штрассена
+        //перемножение матриц. Вариант2. Алгоритм Штрассена 
         public Matrix MultipleMatrixVer2(Matrix mulMatrix)
         {
             if (_size <= 64)
@@ -158,7 +158,7 @@ namespace MatrixWoutSIMD
             var p5 = (Add(a[0], a[1])).MultipleMatrixVer2(b[3]);
             var p6 = (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]));
             var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2],
-                b[3]));
+            b[3]));
 
             var c11 = Add(Delete(Add(p1, p4), p5), p7);
             var c12 = Add(p3, p5);
