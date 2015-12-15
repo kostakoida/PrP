@@ -1,0 +1,7 @@
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Release\MatrixWithSharpPar.dll
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Release\MatrixWithSharpPar.pdb
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.dll
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.pdb
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Release\System.Numerics.Vectors.dll
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Release\System.Numerics.Vectors.xml

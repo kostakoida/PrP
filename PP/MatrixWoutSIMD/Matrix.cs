@@ -95,13 +95,12 @@ namespace MatrixWoutSIMD
             {
                 for (var j = 0; j < _size; j++)
                 {
-                    if (matrix[i, j] <= element.Value)
+                    if (matrix[i, j] > element.Value)
                     {
-                        continue;
+                        element.Value = matrix[i, j];
+                        element.Row = i;
+                        element.Column = j;
                     }
-                    element.Value = matrix[i, j];
-                    element.Row = i;
-                    element.Column = j;
                 }
             }
             return element;

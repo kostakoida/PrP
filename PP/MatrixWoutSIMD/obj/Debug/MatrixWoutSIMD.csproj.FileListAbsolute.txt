@@ -12,3 +12,11 @@ C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Debug\MatrixW
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.pdb
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Debug\MatrixWoutSIMD.dll.config
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Debug\MatrixWoutSIMD.dll
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Debug\MatrixWoutSIMD.pdb
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Debug\MatrixWithSimd.dll
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Debug\MatrixWithSimd.pdb
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.dll
+\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.pdb

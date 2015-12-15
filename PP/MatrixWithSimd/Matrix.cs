@@ -128,21 +128,21 @@ namespace MatrixWithSimd
             {
                 for (var j = 0; j < size / 4; j++)
                 {
-                    if (matrix[i, j].X <= element.Value)
+                    if (matrix[i, j].X > element.Value)
                     {
-                        element = setElement(matrix[i, j].X, i, j);
+                        setElement(matrix[i, j].X, i, j, element);
                     }
-                    if (matrix[i, j].Y <= element.Value)
+                    if (matrix[i, j].Y > element.Value)
                     {
-                        element = setElement(matrix[i, j].Y, i, j);
+                        setElement(matrix[i, j].Y, i, j, element);
                     }
-                    if (matrix[i, j].W <= element.Value)
+                    if (matrix[i, j].W > element.Value)
                     {
-                        element = setElement(matrix[i, j].W, i, j);
+                        setElement(matrix[i, j].W, i, j, element);
                     }
-                    if (matrix[i, j].Z <= element.Value)
+                    if (matrix[i, j].Z > element.Value)
                     {
-                        element = setElement(matrix[i, j].Z, i, j);
+                        setElement(matrix[i, j].Z, i, j, element);
                     }
                 }
             }
@@ -150,14 +150,11 @@ namespace MatrixWithSimd
             return element;
         }
 
-        private Element setElement(float value, int row, int column)
+        private void setElement(float value, int row, int column, Element el)
         {
-            return new Element
-            {
-                Value = value,
-                Row = row,
-                Column = column
-            };
+            el.Value = value;
+            el.Column = column;
+            el.Row = row;
         }
 
         //Умножение матрицы на вектор 

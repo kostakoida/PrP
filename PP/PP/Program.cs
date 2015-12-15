@@ -11,7 +11,7 @@ namespace PP
             var st = new Stopwatch();
 
 
-            for (var i = 64; i <= 2048; i *= 2)
+            for (var i = 64; i <= 8192; i *= 2)
             {
                 var element = new MatrixWoutSIMD.Element
                 {
@@ -25,12 +25,20 @@ namespace PP
                     Column = -1,
                     Row = -1
                 };
+
+                var element3 = new MatrixWithSharpPar.Element
+                {
+                    Value = int.MinValue,
+                    Column = -1,
+                    Row = -1
+                };
                 Console.WriteLine(i);
                 #region init Matrix and vector 
                 var matrix = new MatrixWoutSIMD.Matrix(i);
                 matrix.FillMatrix(rand);
                 var matrix2 = new MatrixWoutSIMD.Matrix(i);
                 matrix2.FillMatrix(rand);
+                var matrix3 = new MatrixWithSharpPar.Matrix(matrix.matrix);
                 var simdMatrix = new MatrixWithSimd.Matrix(matrix.matrix);
                 var simdMatrix2 = new MatrixWithSimd.Matrix(matrix2.matrix);
                 var vector = matrix.FillVector(rand);
@@ -45,8 +53,12 @@ namespace PP
                 st.Restart();
                 simdMatrix.GetMaxValue(element2);
                 st.Stop();
-                Console.WriteLine("Simd: {0}, Time:{1}, Ticks:{2}", element, st.ElapsedMilliseconds, st.ElapsedTicks);
+                Console.WriteLine("Simd: {0}, Time:{1}, Ticks:{2}", element2, st.ElapsedMilliseconds, st.ElapsedTicks);
                 st.Restart();
+                matrix3.GetMaxValuePar(element3);
+                st.Stop();
+                Console.WriteLine("c#PAr: {0}, Time:{1}, Ticks:{2}", element3, st.ElapsedMilliseconds, st.ElapsedTicks);
+                /*st.Restart();
                 var multWithVector = matrix.MultWithVector(vector);
                 st.Stop();
                 Console.WriteLine("Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
@@ -75,7 +87,7 @@ namespace PP
                 Console.WriteLine("Is Matrix which were multiply by 2 different algoritms equal: {0}", MatrixHelper.IsEqual(res1.matrix, res2.matrix, i));
                 Console.WriteLine("Is SIMD Matrix equal not Simd Matrix: {0}", MatrixHelper.IsEqual(new MatrixWoutSIMD.Matrix(resSimd2).matrix, res2.matrix, i));
                 Console.WriteLine("**************************End by {0} size ******************************************", i);
-
+                */
                 #endregion
             }
 
