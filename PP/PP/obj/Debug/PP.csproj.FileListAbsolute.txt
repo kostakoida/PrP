@@ -22,7 +22,6 @@ Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWoutSIMD.dll
 Z:\Documents\Personal\PrP\PP\PP\bin\Debug\System.Numerics.Vectors.dll
 Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSimd.pdb
 Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWoutSIMD.pdb
-Z:\Documents\Personal\PrP\PP\PP\bin\Debug\System.Numerics.Vectors.xml
 Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.csprojResolveAssemblyReference.cache
 Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.exe
 Z:\Documents\Personal\PrP\PP\PP\obj\Debug\PP.pdb
@@ -54,3 +53,5 @@ C:\Users\koste_000\Documents\Personal\NewPrp\PP\PP\obj\Debug\PP.csprojResolveAss
 \\Mac\Home\Documents\Personal\PrP\PP\PP\obj\Debug\PP.csproj.PP.exe.config
 \\Mac\Home\Documents\Personal\PrP\PP\PP\obj\Debug\PP.exe
 \\Mac\Home\Documents\Personal\PrP\PP\PP\obj\Debug\PP.pdb
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSharpPar.dll
+Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSharpPar.pdb

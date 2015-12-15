@@ -4,3 +4,8 @@
 \\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Debug\System.Numerics.Vectors.xml
 \\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.dll
 \\Mac\Home\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.pdb
+Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Debug\MatrixWithSharpPar.dll
+Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Debug\MatrixWithSharpPar.pdb
+Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Debug\System.Numerics.Vectors.dll
+Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.dll
+Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.pdb

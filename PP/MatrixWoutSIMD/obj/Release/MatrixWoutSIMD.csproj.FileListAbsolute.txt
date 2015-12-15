@@ -32,3 +32,10 @@ C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\obj\Release\Matri
 \\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
 \\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
+Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll

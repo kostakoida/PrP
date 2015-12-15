@@ -13,7 +13,7 @@ namespace MatrixWithSharpPar
         private readonly int size;
         private object locker => new object();
         private int processorCount => Environment.ProcessorCount;
-
+        private List<Task> tasks => new List<Task>();
 
         public float this[int row, int column]
         {
@@ -127,43 +127,7 @@ namespace MatrixWithSharpPar
         #region methods 
 
         //поиск максимального элемента 
-        public Element GetMaxValue(Element element)
-        {
-            for (var i = 0; i < size; i++)
-            {
-                for (var j = 0; j < size / 4; j++)
-                {
-                    if (matrix[i, j].X > element.Value)
-                    {
-                        setElement(matrix[i, j].X, i, j, element);
-                    }
-                    if (matrix[i, j].Y > element.Value)
-                    {
-                        setElement(matrix[i, j].Y, i, j, element);
-                    }
-                    if (matrix[i, j].W > element.Value)
-                    {
-                        setElement(matrix[i, j].W, i, j, element);
-                    }
-                    if (matrix[i, j].Z > element.Value)
-                    {
-                        setElement(matrix[i, j].Z, i, j, element);
-                    }
-                }
-            }
-
-            return element;
-        }
-
-        private void setElement(float value, int row, int column, Element el)
-        {
-            el.Value = value;
-            el.Column = column;
-            el.Row = row;
-        }
-
-
-        private void GetMaxValue(Element element, int start, int end)
+         private void GetMaxValue(Element element, int start, int end)
         {
             for (var i = start; i < end; i++)
             {
@@ -211,16 +175,17 @@ namespace MatrixWithSharpPar
 
         public Element GetMaxValuePar(Element element)
         {
-            var tasks = new List<Task>();
-            for (var i = 0; i <  processorCount; i++)
+
+            for (var i = 0; i < processorCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size* it  / processorCount, ((it + 1) * size) /processorCount)));
+                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / processorCount, ((it + 1) * size) / processorCount)));
             }
             foreach (var task in tasks)
             {
                 task.Wait();
             }
+            tasks.Clear();
             return element;
         }
 
@@ -240,7 +205,22 @@ namespace MatrixWithSharpPar
             if (vector.Length != size / 4)
                 return null;
             var res = new float[size];
-            for (var i = 0; i < size; i++)
+            for (var i = 0; i < processorCount; i++)
+            {
+                var it = i;
+                tasks.Add(Task.Factory.StartNew(() => MultWithVector(size * it / processorCount, ((it + 1) * size) / processorCount, res, vector)));
+            }
+            foreach (var task in tasks)
+            {
+                task.Wait();
+            }
+            tasks.Clear();
+            return res;
+        }
+
+        private void MultWithVector(int start, int end, float[] res, Vector4[] vector)
+        {
+            for (var i = start; i < end; i++)
             {
                 var sum = Vector4.Zero;
                 for (var j = 0; j < vector.Length; j++)
@@ -249,7 +229,6 @@ namespace MatrixWithSharpPar
                 }
                 res[i] = sum.X + sum.Y + sum.Z + sum.W;
             }
-            return res;
         }
 
         //перемножение матриц. Вариант1 

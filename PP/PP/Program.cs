@@ -43,7 +43,7 @@ namespace PP
                 var simdMatrix2 = new MatrixWithSimd.Matrix(matrix2.matrix);
                 var vector = matrix.FillVector(rand);
                 var SimdVector = simdMatrix.FillVector(vector);
-
+                var vectorPar = matrix3.FillVector(vector);
                 #endregion
                 #region proccessing 
                 st.Restart();
@@ -58,7 +58,7 @@ namespace PP
                 matrix3.GetMaxValuePar(element3);
                 st.Stop();
                 Console.WriteLine("c#PAr: {0}, Time:{1}, Ticks:{2}", element3, st.ElapsedMilliseconds, st.ElapsedTicks);
-                /*st.Restart();
+                st.Restart();
                 var multWithVector = matrix.MultWithVector(vector);
                 st.Stop();
                 Console.WriteLine("Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
@@ -68,6 +68,12 @@ namespace PP
                 Console.WriteLine("Simd: Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 Console.WriteLine($"Is vectors equal: {MatrixHelper.IsVectorsEqual(multWithVector, multWithSimdVector)}");
                 st.Restart();
+                var multWithcParallels = matrix3.MultWithVector(vectorPar);
+                st.Stop();
+                Console.WriteLine("С#Parallels: Matrix was multiply with vector, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
+                Console.WriteLine($"Is vectors equal: {MatrixHelper.IsVectorsEqual(multWithcParallels, multWithSimdVector)}");
+
+                /*st.Restart();
                 var res1 = matrix.MultipleMatrixVer1(matrix2);
                 st.Stop();
                 Console.WriteLine("Matrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
