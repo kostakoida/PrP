@@ -13,7 +13,7 @@ namespace MatrixWithSharpPar
         private readonly int size;
         private object locker => new object();
         private int processorCount => Environment.ProcessorCount;
-        private List<Task> tasks => new List<Task>();
+        private List<Task> tasks;
 
         public float this[int row, int column]
         {
@@ -85,16 +85,19 @@ namespace MatrixWithSharpPar
             }
             matrix = new Vector4[size, size / 4];
             this.size = size;
+            tasks = new List<Task>();
         }
 
         public Matrix(Vector4[,] matrix)
         {
             this.matrix = matrix;
             size = matrix.GetLength(0);
+            tasks = new List<Task>();
         }
 
         public Matrix(float[,] matrix)
         {
+            tasks = new List<Task>();
             this.matrix = new Vector4[matrix.GetLength(0), matrix.GetLength(0) / 4];
             this.size = matrix.GetLength(0);
             for (var i = 0; i < matrix.GetLength(0); i++)
@@ -175,7 +178,6 @@ namespace MatrixWithSharpPar
 
         public Element GetMaxValuePar(Element element)
         {
-
             for (var i = 0; i < processorCount; i++)
             {
                 var it = i;
@@ -236,7 +238,22 @@ namespace MatrixWithSharpPar
         {
             var result = new Matrix(size);
             var transposed = Transpose(mulMatrix);
-            for (var i = 0; i < size; i++)
+            for (var i = 0; i < processorCount; i++)
+            {
+                var it = i;
+                tasks.Add(Task.Factory.StartNew(() => MultipleMatrixVer1(size * it / processorCount, ((it + 1) * size) / processorCount, transposed, result)));
+            }
+            foreach (var task in tasks)
+            {
+                task.Wait();
+            }
+            tasks.Clear();
+            return result;
+        }
+
+        private void MultipleMatrixVer1(int start, int end, Matrix transposed, Matrix result)
+        {
+            for (var i = start; i < end; i++)
             {
                 for (var j = 0; j < size; j++)
                 {
@@ -248,22 +265,34 @@ namespace MatrixWithSharpPar
                     result[i, j] = temp.X + temp.Y + temp.Z + temp.W;
                 }
             }
-            return result;
         }
 
         public Matrix Transpose(Matrix mulMatrix)
         {
             var transposeMatrix = new Matrix(size);
-            for (var i = 0; i < size; i++)
+            for (var i = 0; i < processorCount; i++)
             {
-                for (var j = 0; j
-                <= i; j++)
+                var it = i;
+                tasks.Add(Task.Factory.StartNew(() => TransposeElements(size * it / processorCount, ((it + 1) * size) / processorCount, transposeMatrix, mulMatrix)));
+            }
+            foreach (var task in tasks)
+            {
+                task.Wait();
+            }
+            tasks.Clear();
+            return transposeMatrix;
+        }
+
+        private void TransposeElements(int start, int end, Matrix transposeMatrix, Matrix mulMatrix)
+        {
+            for (var i = start; i < end; i++)
+            {
+                for (var j = 0; j <= i; j++)
                 {
                     transposeMatrix[i, j] = mulMatrix[j, i];
                     transposeMatrix[j, i] = mulMatrix[i, j];
                 }
             }
-            return transposeMatrix;
         }
 
         //перемножение матриц. Вариант2. Алгоритм Штрассена 

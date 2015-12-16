@@ -45,6 +45,22 @@ namespace MatrixWoutSIMD
             }
         }
 
+        public Matrix(MatrixWithSharpPar.Matrix simdMatrix)
+        {
+            this._size = simdMatrix.matrix.GetLength(0);
+            this.matrix = new float[_size, _size];
+            for (var i = 0; i < _size; i++)
+            {
+                for (var j = 0; j < _size; j += 4)
+                {
+                    matrix[i, j] = simdMatrix.matrix[i, j / 4].X;
+                    matrix[i, j + 1] = simdMatrix.matrix[i, j / 4].Y;
+                    matrix[i, j + 2] = simdMatrix.matrix[i, j / 4].Z;
+                    matrix[i, j + 3] = simdMatrix.matrix[i, j / 4].W;
+                }
+            }
+        }
+
         //заполнение матрицы 
         public void FillMatrix(Random rand)
         {
