@@ -276,36 +276,36 @@ namespace MatrixWithSharpPar
         }
 
         //перемножение матриц. Вариант2. Алгоритм Штрассена 
-        public async Task<Matrix> MylMatrix2Wrapper(Matrix mulMatrix)
+        public Matrix MylMatrix2Wrapper(Matrix mulMatrix)
         {
-            return await MultipleMatrixVer2(mulMatrix, size);
+            return MultipleMatrixVer2(mulMatrix, size);
 
         }
 
-        public async Task<Matrix> MultipleMatrixVer2(Matrix mulMatrix, int rootMatrixSize)
+        public Matrix MultipleMatrixVer2(Matrix mulMatrix, int rootMatrixSize)
         {
-            if (size <= 64)
+            if (size <= 256)
                 return MultipleMatrixVer1(mulMatrix);
 
             var a = CropMatrix();
             var b = mulMatrix.CropMatrix();
             if (rootMatrixSize / 2 != size)
             {
-                return await MultipleMatrixVer2Helper(a, b, rootMatrixSize);
+                return MultipleMatrixVer2Helper(a, b, rootMatrixSize);
             }
-            return await MultipleMatrixVer2Helper(a, b, rootMatrixSize);
+            return MultipleMatrixVer2Helper(a, b, rootMatrixSize);
 
         }
 
-        private async Task<Matrix> MultipleMatrixVer2Helper(Matrix[] a, Matrix[] b, int rootMatrixSize)
+        private Matrix MultipleMatrixVer2Helper(Matrix[] a, Matrix[] b, int rootMatrixSize)
         {
-            var p1 = await (Add(a[0], a[3])).MultipleMatrixVer2(Add(b[0], b[3]), rootMatrixSize);
-            var p2 = await (Add(a[2], a[3])).MultipleMatrixVer2(b[0], rootMatrixSize);
-            var p3 = await a[0].MultipleMatrixVer2(Delete(b[1], b[3]), rootMatrixSize);
-            var p4 = await a[3].MultipleMatrixVer2(Delete(b[2], b[0]), rootMatrixSize);
-            var p5 = await (Add(a[0], a[1])).MultipleMatrixVer2(b[3], rootMatrixSize);
-            var p6 = await (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]), rootMatrixSize);
-            var p7 = await (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], b[3]), rootMatrixSize);
+            var p1 = (Add(a[0], a[3])).MultipleMatrixVer2(Add(b[0], b[3]), rootMatrixSize);
+            var p2 = (Add(a[2], a[3])).MultipleMatrixVer2(b[0], rootMatrixSize);
+            var p3 = a[0].MultipleMatrixVer2(Delete(b[1], b[3]), rootMatrixSize);
+            var p4 = a[3].MultipleMatrixVer2(Delete(b[2], b[0]), rootMatrixSize);
+            var p5 = (Add(a[0], a[1])).MultipleMatrixVer2(b[3], rootMatrixSize);
+            var p6 = (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]), rootMatrixSize);
+            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], b[3]), rootMatrixSize);
 
             var c11 = Add(Delete(Add(p1, p4), p5), p7);
             var c12 = Add(p3, p5);

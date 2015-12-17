@@ -126,7 +126,7 @@ namespace PP
             var vector = matrix.FillVector(rand);
             var SimdVector = simdMatrix.FillVector(vector);
             var vectorPar = matrixSharp.FillVector(vector);
-            st.Restart();
+            /*st.Restart();
             var res2 = matrix.MultipleMatrixVer2(matrix2);
             st.Stop();
             Console.WriteLine("Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
@@ -134,12 +134,12 @@ namespace PP
             var resSimd2 = simdMatrix.MultipleMatrixVer2(simdMatrix2);
             st.Stop();
             Console.WriteLine("Simd: Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
-            st.Restart();/*
-            var resSharpPar2 = await matrixSharp.MylMatrix2Wrapper(matrixSharp2);
+            */st.Restart();
+            var resSharpPar2 = matrixSharp.MylMatrix2Wrapper(matrixSharp2);
             st.Stop();
             Console.WriteLine("SharpParal: Matrix was multiply with another matrix by Strassen algorithm, Time:{0}, Ticks:{1}, SIZE{2}", st.Elapsed, st.ElapsedTicks, i);
             //Console.WriteLine("Is Matrix which were multiply by 2 different algoritms equal: {0}", MatrixHelper.IsEqual(res2.matrix, new MatrixWoutSIMD.Matrix(resSharpPar2).matrix, i));
-            */
+
 
         }
     }

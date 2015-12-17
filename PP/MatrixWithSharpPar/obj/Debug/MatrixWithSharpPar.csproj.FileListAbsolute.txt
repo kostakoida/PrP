@@ -14,3 +14,4 @@ C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\bin\Debug\MatrixWithShar
 C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.dll
 C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.pdb
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.csprojResolveAssemblyReference.cache
