@@ -9,3 +9,8 @@ Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Debug\MatrixWithSharpPar.pdb
 Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Debug\System.Numerics.Vectors.dll
 Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.dll
 Z:\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.pdb
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\bin\Debug\MatrixWithSharpPar.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\bin\Debug\MatrixWithSharpPar.pdb
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.dll
+C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.pdb

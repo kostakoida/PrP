@@ -12,7 +12,7 @@ namespace MatrixWithSharpPar
         public Vector4[,] matrix;
         private readonly int size;
         private object locker => new object();
-        private int processorCount => Environment.ProcessorCount;
+        private int processorCount => Environment.ProcessorCount - 1;
         private List<Task> tasks;
 
         public float this[int row, int column]
@@ -130,7 +130,7 @@ namespace MatrixWithSharpPar
         #region methods 
 
         //поиск максимального элемента 
-         private void GetMaxValue(Element element, int start, int end)
+        private void GetMaxValue(Element element, int start, int end)
         {
             for (var i = start; i < end; i++)
             {
@@ -138,39 +138,19 @@ namespace MatrixWithSharpPar
                 {
                     if (matrix[i, j].X > element.Value)
                     {
-                        ChangeMax(element, new Element
-                        {
-                            Value = matrix[i, j].X,
-                            Row = i,
-                            Column = j
-                        });
+                        ChangeMax(element, matrix[i, j].X, i, j);
                     }
                     if (matrix[i, j].Y > element.Value)
                     {
-                        ChangeMax(element, new Element
-                        {
-                            Value = matrix[i, j].Y,
-                            Row = i,
-                            Column = j
-                        });
+                        ChangeMax(element, matrix[i, j].Y, i, j);
                     }
                     if (matrix[i, j].W > element.Value)
                     {
-                        ChangeMax(element, new Element
-                        {
-                            Value = matrix[i, j].W,
-                            Row = i,
-                            Column = j
-                        });
+                        ChangeMax(element, matrix[i, j].W, i, j);
                     }
                     if (matrix[i, j].Z > element.Value)
                     {
-                        ChangeMax(element, new Element
-                        {
-                            Value = matrix[i, j].Z,
-                            Row = i,
-                            Column = j
-                        });
+                        ChangeMax(element, matrix[i, j].Z, i, j);
                     }
                 }
             }
@@ -191,13 +171,13 @@ namespace MatrixWithSharpPar
             return element;
         }
 
-        public void ChangeMax(Element element, Element element2)
+        private void ChangeMax(Element element, float value, int row, int column)
         {
             lock (locker)
             {
-                element.Row = element2.Row;
-                element.Value = element2.Value;
-                element.Column = element2.Column;
+                element.Row = row;
+                element.Value = value;
+                element.Column = column;
             }
         }
 
@@ -296,20 +276,36 @@ namespace MatrixWithSharpPar
         }
 
         //перемножение матриц. Вариант2. Алгоритм Штрассена 
-        public Matrix MultipleMatrixVer2(Matrix mulMatrix)
+        public async Task<Matrix> MylMatrix2Wrapper(Matrix mulMatrix)
+        {
+            return await MultipleMatrixVer2(mulMatrix, size);
+
+        }
+
+        public async Task<Matrix> MultipleMatrixVer2(Matrix mulMatrix, int rootMatrixSize)
         {
             if (size <= 64)
                 return MultipleMatrixVer1(mulMatrix);
+
             var a = CropMatrix();
             var b = mulMatrix.CropMatrix();
+            if (rootMatrixSize / 2 != size)
+            {
+                return await MultipleMatrixVer2Helper(a, b, rootMatrixSize);
+            }
+            return await MultipleMatrixVer2Helper(a, b, rootMatrixSize);
 
-            var p1 = (Add(a[0], a[3])).MultipleMatrixVer2(Add(b[0], b[3]));
-            var p2 = (Add(a[2], a[3])).MultipleMatrixVer2(b[0]);
-            var p3 = a[0].MultipleMatrixVer2(Delete(b[1], b[3]));
-            var p4 = a[3].MultipleMatrixVer2(Delete(b[2], b[0]));
-            var p5 = (Add(a[0], a[1])).MultipleMatrixVer2(b[3]);
-            var p6 = (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]));
-            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], b[3]));
+        }
+
+        private async Task<Matrix> MultipleMatrixVer2Helper(Matrix[] a, Matrix[] b, int rootMatrixSize)
+        {
+            var p1 = await (Add(a[0], a[3])).MultipleMatrixVer2(Add(b[0], b[3]), rootMatrixSize);
+            var p2 = await (Add(a[2], a[3])).MultipleMatrixVer2(b[0], rootMatrixSize);
+            var p3 = await a[0].MultipleMatrixVer2(Delete(b[1], b[3]), rootMatrixSize);
+            var p4 = await a[3].MultipleMatrixVer2(Delete(b[2], b[0]), rootMatrixSize);
+            var p5 = await (Add(a[0], a[1])).MultipleMatrixVer2(b[3], rootMatrixSize);
+            var p6 = await (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]), rootMatrixSize);
+            var p7 = await (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], b[3]), rootMatrixSize);
 
             var c11 = Add(Delete(Add(p1, p4), p5), p7);
             var c12 = Add(p3, p5);
