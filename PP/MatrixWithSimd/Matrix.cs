@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
+using System.Threading.Tasks;
 using MatrixWithSIMD;
 
 namespace MatrixWithSimd
@@ -8,6 +10,7 @@ namespace MatrixWithSimd
     {
         #region properties 
         public Vector4[,] matrix;
+        private List<Task> tasks;
         private readonly int size;
 
         public float this[int row, int column]
@@ -233,6 +236,7 @@ namespace MatrixWithSimd
 
             return Combine(c11, c12, c21, c22);
         }
+
 
         private Matrix Combine(Matrix c11, Matrix c12, Matrix c21, Matrix c22)
         {
