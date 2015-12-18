@@ -289,28 +289,23 @@ namespace MatrixWithSharpPar
 
             var a = CropMatrix();
             var b = mulMatrix.CropMatrix();
-            if (rootMatrixSize / 2 != size)
-            {
-                return await MultipleMatrixVer2Helper(a, b, rootMatrixSize);
-            }
             return await MultipleMatrixVer2Helper(a, b, rootMatrixSize);
-
         }
 
         private async Task<Matrix> MultipleMatrixVer2Helper(Matrix[] a, Matrix[] b, int rootMatrixSize)
         {
-            var p1 = await (Add(a[0], a[3])).MultipleMatrixVer2(Add(b[0], b[3]), rootMatrixSize);
-            var p2 = await (Add(a[2], a[3])).MultipleMatrixVer2(b[0], rootMatrixSize);
-            var p3 = await a[0].MultipleMatrixVer2(Delete(b[1], b[3]), rootMatrixSize);
-            var p4 = await a[3].MultipleMatrixVer2(Delete(b[2], b[0]), rootMatrixSize);
-            var p5 = await (Add(a[0], a[1])).MultipleMatrixVer2(b[3], rootMatrixSize);
-            var p6 = await (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]), rootMatrixSize);
-            var p7 = await (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], b[3]), rootMatrixSize);
+            var p1 = (Add(a[0], a[3])).MultipleMatrixVer2(Add(b[0], b[3]), rootMatrixSize);
+            var p2 = (Add(a[2], a[3])).MultipleMatrixVer2(b[0], rootMatrixSize);
+            var p3 = a[0].MultipleMatrixVer2(Delete(b[1], b[3]), rootMatrixSize);
+            var p4 = a[3].MultipleMatrixVer2(Delete(b[2], b[0]), rootMatrixSize);
+            var p5 = (Add(a[0], a[1])).MultipleMatrixVer2(b[3], rootMatrixSize);
+            var p6 = (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]), rootMatrixSize);
+            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], b[3]), rootMatrixSize);
 
-            var c11 = Add(Delete(Add(p1, p4), p5), p7);
-            var c12 = Add(p3, p5);
-            var c21 = Add(p2, p4);
-            var c22 = Add(Add(Delete(p1, p2), p3), p6);
+            var c11 = Add(Delete(Add(await p1, await p4), await p5), await p7);
+            var c12 = Add(await p3, await p5);
+            var c21 = Add(await p2, await p4);
+            var c22 = Add(Add(Delete(await p1, await p2), await p3), await p6);
 
             return Combine(c11, c12, c21, c22);
         }
