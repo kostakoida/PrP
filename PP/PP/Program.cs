@@ -56,7 +56,7 @@ namespace PP
                 var vectorParWoutSimd = matrixSharpWoutSimd.FillVector(vector);
                 #endregion
                 #region proccessing 
-                /*
+                
                 Console.WriteLine("Max***********");
                 st.Restart();
                 matrix.GetMaxValue(element);
@@ -138,8 +138,8 @@ namespace PP
                 st.Stop();
                 Console.WriteLine("SharpParalWoutSimd2: SIMDMatrix was multiply with another matrix by simpe algoritm, Time:{0}, Ticks:{1}", st.Elapsed, st.ElapsedTicks);
                 Console.WriteLine("Is SIMD Matrix equal not Simd Matrix: {0}", MatrixHelper.IsEqual(new MatrixWoutSIMD.Matrix(resSharpParWoutSimd2).matrix, res2.matrix, i));
-                */
-                MylMatrix(i);
+                
+                //MylMatrix(i);
                 Console.WriteLine("**************************End by {0} size ******************************************", i);
 
                 #endregion
