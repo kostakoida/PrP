@@ -1,0 +1,4 @@
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\bin\Release\MatrixWithSharpParWoutSimd.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\bin\Release\MatrixWithSharpParWoutSimd.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\obj\Release\MatrixWithSharpParWoutSimd.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\obj\Release\MatrixWithSharpParWoutSimd.pdb

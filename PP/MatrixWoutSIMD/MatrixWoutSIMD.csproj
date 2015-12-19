@@ -65,9 +65,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MatrixWithSharpPar\MatrixWithSharpPar.csproj">
+    <ProjectReference Include="..\MatrixWithSharpParWoutSimd\MatrixWithSharpParWoutSimd.csproj">
+      <Project>{d6c10c75-cae8-4448-a2fa-0a37ea776f38}</Project>
+      <Name>MatrixWithSharpParWoutSimd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatrixWithSharpPar\MatrixWithSharpSIMDPar.csproj">
       <Project>{cb10c4b9-9ee9-4b44-aa83-f0b2fd366ae2}</Project>
-      <Name>MatrixWithSharpPar</Name>
+      <Name>MatrixWithSharpSIMDPar</Name>
     </ProjectReference>
     <ProjectReference Include="..\MatrixWithSimd\MatrixWithSimd.csproj">
       <Project>{60867a1c-c958-4caf-b5d8-2d81a46ef810}</Project>

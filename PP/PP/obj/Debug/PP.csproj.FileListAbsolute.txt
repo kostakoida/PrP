@@ -55,3 +55,5 @@ C:\Users\koste_000\Documents\Personal\NewPrp\PP\PP\obj\Debug\PP.csprojResolveAss
 \\Mac\Home\Documents\Personal\PrP\PP\PP\obj\Debug\PP.pdb
 Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSharpPar.dll
 Z:\Documents\Personal\PrP\PP\PP\bin\Debug\MatrixWithSharpPar.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\PP\bin\Debug\MatrixWithSharpPar.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\PP\bin\Debug\MatrixWithSharpPar.pdb

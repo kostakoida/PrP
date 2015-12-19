@@ -36,8 +36,10 @@ C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.d
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpParWoutSimd.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpParWoutSimd.pdb
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.pdb
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache

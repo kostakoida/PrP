@@ -5,7 +5,7 @@ namespace MatrixWoutSIMD
     public class Matrix
     {
         #region properties 
-        private const int MaxNum = 1000000000;
+        private const int MaxNum = 10000000;
         public float[,] matrix;
         private readonly int _size;
         private static readonly string Ls = Environment.NewLine;
@@ -41,6 +41,19 @@ namespace MatrixWoutSIMD
                     matrix[i, j + 1] = simdMatrix.matrix[i, j / 4].Y;
                     matrix[i, j + 2] = simdMatrix.matrix[i, j / 4].Z;
                     matrix[i, j + 3] = simdMatrix.matrix[i, j / 4].W;
+                }
+            }
+        }
+
+        public Matrix(MatrixWithSharpParWoutSimd.Matrix m)
+        {
+            this._size = m.matrix.GetLength(0);
+            this.matrix = new float[_size, _size];
+            for (var i = 0; i < _size; i++)
+            {
+                for (var j = 0; j < _size; j++)
+                {
+                    matrix[i, j] = m.matrix[i, j];
                 }
             }
         }
@@ -172,8 +185,7 @@ namespace MatrixWoutSIMD
             var p4 = a[3].MultipleMatrixVer2(Delete(b[2], b[0]));
             var p5 = (Add(a[0], a[1])).MultipleMatrixVer2(b[3]);
             var p6 = (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]));
-            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2],
-            b[3]));
+            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2],b[3]));
 
             var c11 = Add(Delete(Add(p1, p4), p5), p7);
             var c12 = Add(p3, p5);

@@ -22,3 +22,4 @@ C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Release\M
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Release\System.Numerics.Vectors.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\bin\Debug\MatrixWithSharpParWoutSimd.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\bin\Debug\MatrixWithSharpParWoutSimd.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\obj\Debug\MatrixWithSharpParWoutSimd.csprojResolveAssemblyReference.cache
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\obj\Debug\MatrixWithSharpParWoutSimd.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpParWoutSimd\obj\Debug\MatrixWithSharpParWoutSimd.pdb
