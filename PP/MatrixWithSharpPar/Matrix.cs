@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace MatrixWithSharpPar
@@ -10,10 +9,11 @@ namespace MatrixWithSharpPar
     {
         #region properties 
         public Vector4[,] matrix;
-        private readonly int size;
+        public int size;
         private object locker => new object();
-        private int processorCount => Environment.ProcessorCount - 1;
+        private int processorCount => Environment.ProcessorCount;
         private List<Task> tasks;
+        private Element _element;
 
         public float this[int row, int column]
         {
@@ -90,6 +90,13 @@ namespace MatrixWithSharpPar
 
         public Matrix(Vector4[,] matrix)
         {
+            size = matrix.GetLength(0);
+            tasks = new List<Task>();
+        }
+
+        public Matrix(Vector4[,] matrix, bool makeElements)
+        {
+
             this.matrix = matrix;
             size = matrix.GetLength(0);
             tasks = new List<Task>();
@@ -130,6 +137,38 @@ namespace MatrixWithSharpPar
         #region methods 
 
         //поиск максимального элемента 
+        public void GetMaxParWrapper(Element element)
+        {
+            _element = element;
+            var с = Parallel.For(0, size, GetMaxParHelper);
+        }
+
+        private void GetMaxParHelper(int i)
+        {
+            for (var j = 0; j < size / 4; j++)
+            {
+                var tinySize = size / 4;
+                var row = i % tinySize >= 0 ? i / tinySize : i / tinySize - 1;
+                var column = i % (tinySize);
+                if (this[i].X > _element.Value)
+                {
+                    ChangeMax(_element, this[i].X, row, column);
+                }
+                if (this[i].Y > _element.Value)
+                {
+                    ChangeMax(_element, this[i].Y, row, column);
+                }
+                if (this[i].W > _element.Value)
+                {
+                    ChangeMax(_element, this[i].W, row, column);
+                }
+                if (this[i].Z > _element.Value)
+                {
+                    ChangeMax(_element, this[i].Z, row, column);
+                }
+            }
+        }
+
         private void GetMaxValue(Element element, int start, int end)
         {
             for (var i = start; i < end; i++)
@@ -379,6 +418,91 @@ namespace MatrixWithSharpPar
             return res;
         }
 
+
+
+
+
+        /////////////////////////////////////
+        /// 
+        /// 
+        /// 
+        public Matrix MultipleMatrixVer2(Matrix mulMatrix)
+        {
+            if (size <= 128)
+                return MultipleMatrixVer11(mulMatrix);
+            var a = CropMatrix();
+            var b = mulMatrix.CropMatrix();
+            var p1 = new Matrix(a[0].size);
+            var p2 = new Matrix(a[0].size);
+            var p3 = new Matrix(a[0].size);
+            var p4 = new Matrix(a[0].size);
+            var p5 = new Matrix(a[0].size);
+            var p6 = new Matrix(a[0].size);
+            var p7 = new Matrix(a[0].size);
+
+            Parallel.Invoke(
+            () => ConverLink(p1, () => (Add(a[0], a[3])).MultipleMatrixVer2(Add(b[0], b[3]))),
+            () => ConverLink(p2, () => (Add(a[2], a[3])).MultipleMatrixVer2(b[0])),
+            () => ConverLink(p3, () => a[0].MultipleMatrixVer2(Delete(b[1], b[3]))),
+            () => ConverLink(p4, () => a[3].MultipleMatrixVer2(Delete(b[2], b[0]))),
+            () => ConverLink(p5, () => (Add(a[0], a[1])).MultipleMatrixVer2(b[3])),
+            () => ConverLink(p6, () => (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]))),
+            () => ConverLink(p7, () => (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2], b[3]))));
+            var c11 = new Matrix(a[0].size);
+            var c12 = new Matrix(a[0].size);
+            var c21 = new Matrix(a[0].size);
+            var c22 = new Matrix(a[0].size);
+
+            Parallel.Invoke(
+                () => ConverLink(c11, () => Add(Delete(Add(p1, p4), p5), p7)),
+                () => ConverLink(c12, () => Add(p3, p5)),
+                () => ConverLink(c21, () => Add(p2, p4)),
+                () => ConverLink(c22, () => Add(Add(Delete(p1, p2), p3), p6)));
+
+            return Combine(c11, c12, c21, c22);
+        }
+
+        private void ConverLink(Matrix m, Func<Matrix> a)
+        {
+            var c = a();
+            m.matrix = c.matrix;
+        }
+
+
+        //перемножение матриц. Вариант1 
+        public Matrix MultipleMatrixVer11(Matrix mulMatrix)
+        {
+            var result = new Matrix(size);
+            var transposed = Transpose1(mulMatrix);
+            for (var i = 0; i < size; i++)
+            {
+                for (var j = 0; j < size; j++)
+                {
+                    var temp = Vector4.Zero;
+                    for (var k = 0; k < size / 4; k++)
+                    {
+                        temp += this[i * size / 4 + k] * transposed[j * size / 4 + k];
+                    }
+                    result[i, j] = temp.X + temp.Y + temp.Z + temp.W;
+                }
+            }
+            return result;
+        }
+
+        public Matrix Transpose1(Matrix mulMatrix)
+        {
+            var transposeMatrix = new Matrix(size);
+            for (var i = 0; i < size; i++)
+            {
+                for (var j = 0; j
+                <= i; j++)
+                {
+                    transposeMatrix[i, j] = mulMatrix[j, i];
+                    transposeMatrix[j, i] = mulMatrix[i, j];
+                }
+            }
+            return transposeMatrix;
+        }
         #endregion
 
     }

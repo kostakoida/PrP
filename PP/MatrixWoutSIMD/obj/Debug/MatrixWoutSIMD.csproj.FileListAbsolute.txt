@@ -29,3 +29,5 @@ Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Debug\MatrixWithSimd.pdb
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.dll
 Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Debug\MatrixWoutSIMD.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Debug\MatrixWithSharpPar.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Debug\MatrixWithSharpPar.pdb

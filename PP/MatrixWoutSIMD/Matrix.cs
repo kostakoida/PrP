@@ -45,6 +45,19 @@ namespace MatrixWoutSIMD
             }
         }
 
+        public Matrix(MatrixWithSharpParWoutSimd.Matrix m)
+        {
+            this._size = m.matrix.GetLength(0);
+            this.matrix = new float[_size, _size];
+            for (var i = 0; i < _size; i++)
+            {
+                for (var j = 0; j < _size; j++)
+                {
+                    matrix[i, j] = m.matrix[i, j];
+                }
+            }
+        }
+
         public Matrix(MatrixWithSharpPar.Matrix simdMatrix)
         {
             this._size = simdMatrix.matrix.GetLength(0);
@@ -172,8 +185,7 @@ namespace MatrixWoutSIMD
             var p4 = a[3].MultipleMatrixVer2(Delete(b[2], b[0]));
             var p5 = (Add(a[0], a[1])).MultipleMatrixVer2(b[3]);
             var p6 = (Delete(a[2], a[0])).MultipleMatrixVer2(Add(b[0], b[1]));
-            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2],
-            b[3]));
+            var p7 = (Delete(a[1], a[3])).MultipleMatrixVer2(Add(b[2],b[3]));
 
             var c11 = Add(Delete(Add(p1, p4), p5), p7);
             var c12 = Add(p3, p5);

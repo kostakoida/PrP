@@ -1,0 +1,6 @@
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Debug\MatrixWithSharpPar.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Debug\MatrixWithSharpPar.pdb
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpSIMDPar.csprojResolveAssemblyReference.cache
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.dll
+C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Debug\MatrixWithSharpPar.pdb
