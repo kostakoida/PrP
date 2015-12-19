@@ -11,7 +11,7 @@ namespace MatrixWithSharpPar
         public Vector4[,] matrix;
         public int size;
         private object locker => new object();
-        private int processorCount => Environment.ProcessorCount;
+        private static int procCount => Environment.ProcessorCount;
         private List<Task> tasks;
         private Element _element;
 
@@ -197,10 +197,10 @@ namespace MatrixWithSharpPar
 
         public Element GetMaxValuePar(Element element)
         {
-            for (var i = 0; i < processorCount; i++)
+            for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / processorCount, ((it + 1) * size) / processorCount)));
+                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / procCount, ((it + 1) * size) / procCount)));
             }
             foreach (var task in tasks)
             {
@@ -226,10 +226,10 @@ namespace MatrixWithSharpPar
             if (vector.Length != size / 4)
                 return null;
             var res = new float[size];
-            for (var i = 0; i < processorCount; i++)
+            for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => MultWithVector(size * it / processorCount, ((it + 1) * size) / processorCount, res, vector)));
+                tasks.Add(Task.Factory.StartNew(() => MultWithVector(size * it / procCount, ((it + 1) * size) / procCount, res, vector)));
             }
             foreach (var task in tasks)
             {
@@ -257,10 +257,10 @@ namespace MatrixWithSharpPar
         {
             var result = new Matrix(size);
             var transposed = Transpose(mulMatrix);
-            for (var i = 0; i < processorCount; i++)
+            for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => MultipleMatrixVer1(size * it / processorCount, ((it + 1) * size) / processorCount, transposed, result)));
+                tasks.Add(Task.Factory.StartNew(() => MultipleMatrixVer1(size * it / procCount, ((it + 1) * size) / procCount, transposed, result)));
             }
             foreach (var task in tasks)
             {
@@ -289,10 +289,10 @@ namespace MatrixWithSharpPar
         public Matrix Transpose(Matrix mulMatrix)
         {
             var transposeMatrix = new Matrix(size);
-            for (var i = 0; i < processorCount; i++)
+            for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => TransposeElements(size * it / processorCount, ((it + 1) * size) / processorCount, transposeMatrix, mulMatrix)));
+                tasks.Add(Task.Factory.StartNew(() => TransposeElements(size * it / procCount, ((it + 1) * size) / procCount, transposeMatrix, mulMatrix)));
             }
             foreach (var task in tasks)
             {
@@ -314,7 +314,7 @@ namespace MatrixWithSharpPar
             }
         }
 
-        //перемножение матриц. Вариант2. Алгоритм Штрассена 
+        //перемножение матриц. Вариант2. Алгоритм Штрассена. 1 Вариант парализации
         public async Task<Matrix> MylMatrix2Wrapper(Matrix mulMatrix)
         {
             return await MultipleMatrixVer2(mulMatrix, size);
@@ -424,7 +424,7 @@ namespace MatrixWithSharpPar
 
         /////////////////////////////////////
         /// 
-        /// 
+        /// Умножение матриц. Алгоритм Штрассена. Второй вариант паралезации
         /// 
         public Matrix MultipleMatrixVer2(Matrix mulMatrix)
         {
@@ -469,7 +469,7 @@ namespace MatrixWithSharpPar
         }
 
 
-        //перемножение матриц. Вариант1 
+        //перемножение матриц. Вариант1 без паралезации
         public Matrix MultipleMatrixVer11(Matrix mulMatrix)
         {
             var result = new Matrix(size);

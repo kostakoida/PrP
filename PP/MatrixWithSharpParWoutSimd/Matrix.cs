@@ -12,7 +12,7 @@ namespace MatrixWithSharpParWoutSimd
         public int size;
         private static readonly string Ls = Environment.NewLine;
         private object locker => new object();
-        private int processorCount => Environment.ProcessorCount;
+        private static int procCount => Environment.ProcessorCount;
         private List<Task> tasks;
         private Element _element;
         #endregion
@@ -94,10 +94,10 @@ namespace MatrixWithSharpParWoutSimd
         //поиск максимального элемента 
         public Element GetMaxValuePar(Element element)
         {
-            for (var i = 0; i < processorCount; i++)
+            for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / processorCount, ((it + 1) * size) / processorCount)));
+                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / procCount, ((it + 1) * size) / procCount)));
             }
             foreach (var task in tasks)
             {
@@ -138,10 +138,10 @@ namespace MatrixWithSharpParWoutSimd
             if (vector.Length != size)
                 return null;
             var res = new float[size];
-            for (var i = 0; i < processorCount; i++)
+            for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => MultWithVector(size * it / processorCount, ((it + 1) * size) / processorCount, res, vector)));
+                tasks.Add(Task.Factory.StartNew(() => MultWithVector(size * it / procCount, ((it + 1) * size) / procCount, res, vector)));
             }
             foreach (var task in tasks)
             {
@@ -168,10 +168,10 @@ namespace MatrixWithSharpParWoutSimd
         public Matrix MultipleMatrixVer1(Matrix mulMatrix)
         {
             var result = new float[size, size];
-            for (var i = 0; i < processorCount; i++)
+            for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => MultipleMatrixVer1(size * it / processorCount, ((it + 1) * size) / processorCount, mulMatrix, result)));
+                tasks.Add(Task.Factory.StartNew(() => MultipleMatrixVer1(size * it / procCount, ((it + 1) * size) / procCount, mulMatrix, result)));
             }
             foreach (var task in tasks)
             {
@@ -196,7 +196,7 @@ namespace MatrixWithSharpParWoutSimd
             }
         }
 
-        //перемножение матриц. Вариант2. Алгоритм Штрассена 
+        //перемножение матриц. Вариант2. Алгоритм Штрассена. 1 вариант парализации
         public async Task<Matrix> MultipleMatrixVer2(Matrix mulMatrix, int rootMatrixSize)
         {
             if (size <= 64)
@@ -288,7 +288,7 @@ namespace MatrixWithSharpParWoutSimd
             return res;
         }
 
-
+        //Алгоритм Штрассена. 2 вариант парализации
         public Matrix MultipleMatrixVer2SecondVar(Matrix mulMatrix)
         {
             if (size <= 128)

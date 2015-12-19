@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Element.cs" />
     <Compile Include="Matrix.cs" />
-    <Compile Include="MaxValueModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
