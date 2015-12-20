@@ -26,3 +26,8 @@ C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\bin\Debug\MatrixW
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.dll
 C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.pdb
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Debug\MatrixWithSimd.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Debug\MatrixWithSimd.pdb
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSimd\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSimd\obj\Debug\MatrixWithSimd.pdb

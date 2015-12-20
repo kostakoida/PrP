@@ -59,19 +59,19 @@ namespace PP
                 
                 Console.WriteLine("Max***********");
                 st.Restart();
-                matrix.GetMaxValue(element);
+                element = matrix.GetMaxValue(element);
                 st.Stop();
                 Console.WriteLine("{0}, Time:{1}, Ticks:{2}", element, st.ElapsedMilliseconds, st.ElapsedTicks);
                 st.Restart();
-                simdMatrix.GetMaxValue(element2);
+                element2 = simdMatrix.GetMaxValue(element2);
                 st.Stop();
                 Console.WriteLine("Simd: {0}, Time:{1}, Ticks:{2}", element2, st.ElapsedMilliseconds, st.ElapsedTicks);
                 st.Restart();
-                matrixSharpSimd.GetMaxValuePar(element3);
+                element3 = matrixSharpSimd.GetMaxValuePar(element3);
                 st.Stop();
                 Console.WriteLine("c#PArSimd: {0}, Time:{1}, Ticks:{2}", element3, st.ElapsedMilliseconds, st.ElapsedTicks);
                 st.Restart();
-                matrixSharpWoutSimd.GetMaxValuePar(element4);
+                element4 = matrixSharpWoutSimd.GetMaxValuePar(element4);
                 st.Stop();
                 Console.WriteLine("c#PArWoutSimd: {0}, Time:{1}, Ticks:{2}", element4, st.ElapsedMilliseconds, st.ElapsedTicks);
 

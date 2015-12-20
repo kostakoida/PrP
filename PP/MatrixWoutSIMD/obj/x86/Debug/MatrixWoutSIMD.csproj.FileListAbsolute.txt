@@ -1,6 +1,0 @@
-\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Debug\MatrixWoutSIMD.dll.config
-\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Debug\MatrixWoutSIMD.dll
-\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\x86\Debug\MatrixWoutSIMD.pdb
-\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x86\Debug\MatrixWoutSIMD.dll
-\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x86\Debug\MatrixWoutSIMD.pdb
-\\psf\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\x86\Debug\MatrixWoutSIMD.csprojResolveAssemblyReference.cache

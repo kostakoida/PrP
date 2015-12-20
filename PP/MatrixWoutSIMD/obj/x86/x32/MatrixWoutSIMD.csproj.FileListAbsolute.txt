@@ -1,2 +1,0 @@
-C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\bin\x86\x32\MatrixWoutSIMD.dll
-C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\obj\x86\x32\MatrixWoutSIMD.dll

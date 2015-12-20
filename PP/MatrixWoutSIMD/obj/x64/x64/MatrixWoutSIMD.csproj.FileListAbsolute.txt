@@ -1,4 +1,0 @@
-C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\bin\x64\x64\MatrixWoutSIMD.dll
-C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\obj\x64\x64\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\obj\x64\x64\MatrixWoutSIMD.dll
-C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\MatrixWoutSIMD\bin\x64\x64\MatrixWoutSIMD.dll.config

@@ -5,7 +5,7 @@ namespace MatrixWoutSIMD
     public class Matrix
     {
         #region properties 
-        private const int MaxNum = 1000000000;
+        private const int MaxNum = 100000;
         public float[,] matrix;
         private readonly int _size;
         private static readonly string Ls = Environment.NewLine;
@@ -124,12 +124,10 @@ namespace MatrixWoutSIMD
             {
                 for (var j = 0; j < _size; j++)
                 {
-                    if (matrix[i, j] > element.Value)
-                    {
-                        element.Value = matrix[i, j];
-                        element.Row = i;
-                        element.Column = j;
-                    }
+                    if (!(matrix[i, j] > element.Value)) continue;
+                    element.Value = matrix[i, j];
+                    element.Row = i;
+                    element.Column = j;
                 }
             }
             return element;

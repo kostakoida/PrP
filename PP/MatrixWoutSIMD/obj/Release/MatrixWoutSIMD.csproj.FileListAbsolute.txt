@@ -1,46 +1,11 @@
-c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
-c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.pdb
-c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
-c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.pdb
-c:\Users\koste_000\documents\visual studio 2015\Projects\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.xml
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-C:\Users\koste_000\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
-\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
-\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
-\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
-\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
-\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-\\Mac\Home\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
-Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
-Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
-Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
-Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
-Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
-Z:\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.pdb
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-C:\Users\Kostiantyn\Documents\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpParWoutSimd.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpParWoutSimd.pdb
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.pdb
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll.config
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWoutSIMD.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpParWoutSimd.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\System.Numerics.Vectors.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpParWoutSimd.pdb
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSharpPar.pdb
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\bin\Release\MatrixWithSimd.pdb
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.csprojResolveAssemblyReference.cache
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWoutSIMD\obj\Release\MatrixWoutSIMD.dll

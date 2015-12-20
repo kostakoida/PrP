@@ -1,2 +1,0 @@
-C:\Users\koste_000\Documents\Visual Studio 2015\Projects\PP\PP\bin\x86\Debug\PP.exe.config
-C:\Users\Kostiantyn\Documents\PrP\PP\PP\bin\x86\Debug\PP.exe.config

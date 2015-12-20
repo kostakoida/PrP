@@ -1,6 +1,5 @@
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Release\MatrixWithSharpPar.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Release\MatrixWithSharpPar.pdb
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\bin\Release\System.Numerics.Vectors.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpSIMDPar.csprojResolveAssemblyReference.cache
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.dll
-C:\Users\koste_000\Documents\Personal\NewPrp\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.pdb
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Release\MatrixWithSharpPar.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Release\MatrixWithSharpPar.pdb
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSharpPar\bin\Release\System.Numerics.Vectors.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.dll
+C:\Users\Kostiantyn\Documents\Personal\PrP\PP\MatrixWithSharpPar\obj\Release\MatrixWithSharpPar.pdb

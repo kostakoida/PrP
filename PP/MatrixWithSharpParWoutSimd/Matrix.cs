@@ -15,6 +15,8 @@ namespace MatrixWithSharpParWoutSimd
         private static int procCount => Environment.ProcessorCount;
         private List<Task> tasks;
         private Element _element;
+        private Element[] elements; 
+
         #endregion
 
         #region init 
@@ -94,17 +96,36 @@ namespace MatrixWithSharpParWoutSimd
         //поиск максимального элемента 
         public Element GetMaxValuePar(Element element)
         {
+            elements = new Element[procCount];
             for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / procCount, ((it + 1) * size) / procCount)));
+                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / procCount, ((it + 1) * size) / procCount, it)));
             }
             foreach (var task in tasks)
             {
                 task.Wait();
             }
             tasks.Clear();
+            foreach (var el in elements)
+            {
+                if (el == null)
+                {
+                    Console.WriteLine("nulll");
+                }
+                if (el?.Value > element.Value)
+                {
+                    ChangeMax(element, el);
+                }
+            }
             return element;
+        }
+
+        private void ChangeMax(Element el1, Element el2)
+        {
+            el1.Value = el2.Value;
+            el1.Column = el2.Column;
+            el1.Row = el2.Row;
         }
 
         private void ChangeMax(Element element, float value, int row, int column)
@@ -116,19 +137,22 @@ namespace MatrixWithSharpParWoutSimd
                 element.Column = column;
             }
         }
-        public Element GetMaxValue(Element element, int start, int end)
+        public Element GetMaxValue(Element element, int start, int end, int it)
         {
+            var el = new Element() {Value = 0};
             for (; start < end; start++)
             {
                 for (var j = 0; j < size; j++)
                 {
-                    if (matrix[start, j] > element.Value)
+                    if (matrix[start, j] > el.Value)
                     {
-                        ChangeMax(element, matrix[start, j], start, j);
-                        element.Value = matrix[start, j];
+                        ChangeMax(el, matrix[start, j], start, j);
                     }
                 }
             }
+            if (el == null)
+                Console.WriteLine("NUUUUUUUUUUUUUUUUUUUUUUUUL");
+            elements[it] = el;
             return element;
         }
 

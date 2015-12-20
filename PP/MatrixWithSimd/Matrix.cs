@@ -127,28 +127,30 @@ namespace MatrixWithSimd
         //поиск максимального элемента 
         public Element GetMaxValue(Element element)
         {
+            var el = element;
             for (var i = 0; i < size; i++)
             {
                 for (var j = 0; j < size / 4; j++)
                 {
                     if (matrix[i, j].X > element.Value)
                     {
-                        setElement(matrix[i, j].X, i, j, element);
+                        setElement(matrix[i, j].X, i, j * 4, el);
                     }
                     if (matrix[i, j].Y > element.Value)
                     {
-                        setElement(matrix[i, j].Y, i, j, element);
-                    }
-                    if (matrix[i, j].W > element.Value)
-                    {
-                        setElement(matrix[i, j].W, i, j, element);
+                        setElement(matrix[i, j].Y, i, j * 4 + 1, el);
                     }
                     if (matrix[i, j].Z > element.Value)
                     {
-                        setElement(matrix[i, j].Z, i, j, element);
+                        setElement(matrix[i, j].Z, i, j * 4 + 2, el);
+                    }
+                    if (matrix[i, j].W > element.Value)
+                    {
+                        setElement(matrix[i, j].W, i, j * 4 + 3, el);
                     }
                 }
             }
+
 
             return element;
         }

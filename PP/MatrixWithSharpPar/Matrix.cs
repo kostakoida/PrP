@@ -14,6 +14,8 @@ namespace MatrixWithSharpPar
         private static int procCount => Environment.ProcessorCount;
         private List<Task> tasks;
         private Element _element;
+        private Element[] elements;
+
 
         public float this[int row, int column]
         {
@@ -152,62 +154,87 @@ namespace MatrixWithSharpPar
                 var column = i % (tinySize);
                 if (this[i].X > _element.Value)
                 {
-                    ChangeMax(_element, this[i].X, row, column);
+                    ChangeMax(_element, this[i].X, row, column * 4);
                 }
                 if (this[i].Y > _element.Value)
                 {
-                    ChangeMax(_element, this[i].Y, row, column);
+                    ChangeMax(_element, this[i].Y, row, column * 4 + 1);
                 }
                 if (this[i].W > _element.Value)
                 {
-                    ChangeMax(_element, this[i].W, row, column);
+                    ChangeMax(_element, this[i].W, row, column * 4 + 2);
                 }
                 if (this[i].Z > _element.Value)
                 {
-                    ChangeMax(_element, this[i].Z, row, column);
+                    ChangeMax(_element, this[i].Z, row, column * 4 + 3);
                 }
             }
         }
 
-        private void GetMaxValue(Element element, int start, int end)
+        private void GetMaxValue(Element element, int start, int end, int it)
         {
+            var el = new Element() {Value = 0};
+
             for (var i = start; i < end; i++)
             {
                 for (var j = 0; j < size / 4; j++)
                 {
-                    if (matrix[i, j].X > element.Value)
+                    if (matrix[i, j].X > el.Value)
                     {
-                        ChangeMax(element, matrix[i, j].X, i, j);
+                        ChangeMax(el, matrix[i, j].X, i, j * 4);
                     }
-                    if (matrix[i, j].Y > element.Value)
+                    if (matrix[i, j].Y > el.Value)
                     {
-                        ChangeMax(element, matrix[i, j].Y, i, j);
+                        ChangeMax(el, matrix[i, j].Y, i, j * 4 + 1);
                     }
-                    if (matrix[i, j].W > element.Value)
+                    if (matrix[i, j].Z > el.Value)
                     {
-                        ChangeMax(element, matrix[i, j].W, i, j);
+                        ChangeMax(el, matrix[i, j].Z, i, j * 4 + 2);
                     }
-                    if (matrix[i, j].Z > element.Value)
+                    if (matrix[i, j].W > el.Value)
                     {
-                        ChangeMax(element, matrix[i, j].Z, i, j);
+                        ChangeMax(el, matrix[i, j].W, i, j * 4 + 3);
                     }
                 }
             }
+            if (el == null)
+                Console.WriteLine("NUUUUUUUUUUUUUUUUUUUUUUUUL");
+            elements[it] = el;
+
         }
 
         public Element GetMaxValuePar(Element element)
         {
+            elements = new Element[procCount];
             for (var i = 0; i < procCount; i++)
             {
                 var it = i;
-                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / procCount, ((it + 1) * size) / procCount)));
+                tasks.Add(Task.Factory.StartNew(() => GetMaxValue(element, size * it / procCount, ((it + 1) * size) / procCount, it)));
             }
             foreach (var task in tasks)
             {
                 task.Wait();
             }
             tasks.Clear();
+            foreach (var el in elements)
+            {
+                if (el == null)
+                {
+                    Console.WriteLine("nulll");
+                }
+                if (el.Value > element.Value)
+                {
+                    ChangeMax(element, el);
+                }
+            }
             return element;
+        }
+
+        private void ChangeMax(Element el1, Element el2)
+        {
+            el1.Value = el2.Value;
+            el1.Column = el2.Column;
+            el1.Row = el2.Row;
         }
 
         private void ChangeMax(Element element, float value, int row, int column)
